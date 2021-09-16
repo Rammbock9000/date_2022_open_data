@@ -1,8 +1,6 @@
 # date_2022_open_data
 
-=======================
-== CONTENTS
-=======================
+== CONTENTS ==
 data files: 
 - schedules for all schedulers as csv files
 - a .vhd file for each schedule (for which origami did not time out)
