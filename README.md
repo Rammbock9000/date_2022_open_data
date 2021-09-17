@@ -5,6 +5,7 @@
 == INFO
 
 =====================
+
 - we assume that you can execute bash scripts and have python installed
 - in our bash scripts we assume that you can call python from command line via "python3"
 - if this is not the case, please modify the scripts accordingly (e.g., by changing "python3" to "python")
@@ -15,6 +16,7 @@
 == CONTENTS
 
 =====================
+
 data files: 
 - schedules for all schedulers as csv files
 - a .vhd file for each synthesis
@@ -31,6 +33,7 @@ scripts:
 == INSTRUCTIONS
 
 =====================
+
 1) optional: you can re-generate synthesis results using the provided .vhd files
 2) make bash scripts executable
 3) navigate into "scripts/generate_directories" and execute "generate_directories.sh". This sets up the folder structure for the following scripts
