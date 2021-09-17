@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage{threeparttable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{etoolbox}
+\usepackage[simplified]{pgf-umlcd}
+\usepackage{pgfplotstable}
+\usepackage{lscape}
+
+\begin{document}
+
+% commands
+\newcommand{\testname}[1]{\textsf{#1}}
+
+% colors
+\definecolor{c0}{HTML}{ffffcc}
+\definecolor{c1}{HTML}{c2e699}
+\definecolor{c2}{HTML}{78c679}
+\definecolor{c3}{HTML}{238443}
+
+% Color line plots
+\pgfplotscreateplotcyclelist{customlist}{%
+blue,every mark/.append style={solid,fill=blue},mark=*\\%
+red,densely dashed,every mark/.append style={solid,fill=red},mark=square*\\%
+black,densely dashed,every mark/.append style={solid,fill=gray},mark=diamond*\\%
+}
+
+% scheduling table
+\input{scheduling_summary_table}
+\newpage
+
+% design space exploration for gen benchmark
+\input{gen_plots}
+\newpage
+
+% plot with energies
+\input{energy_plot}
+
+\end{document}

@@ -1,0 +1,26 @@
+# II 1
+# graph /home/nfiege/Repositories/hatschet/benchmarks/origami//ycbcr_tr.graphml
+# resourceModel /home/nfiege/Repositories/experiments/trunk/rmIntII/origami//ycbcr_tr/RM3.xml
+# vertex;cycle;fu
+In_CR;0;0
+In_Y;0;0
+In_CB;0;0
+Const7;0;0
+Const8;0;0
+Const9;0;0
+Constant6;0;0
+Constant7;0;0
+Constant8;0;0
+Product4;6;0
+Product5;6;1
+Product6;6;2
+Product7;6;3
+Subtract3;1;0
+Sum4;1;1
+Sum5;10;0
+Sum7;10;1
+Out_R;15;0
+Out_G;20;0
+Out_B;15;0
+Sum6Tree0;10;2
+Sum6Tree1;15;3

@@ -1,0 +1,1065 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date             : Wed Apr 15 11:15:58 2020
+| Host             : animal.digi.e-technik.uni-kassel.de running 64-bit CentOS Linux release 7.7.1908 (Core)
+| Command          : report_power -file /home/nfiege/Repositories/origami/vhdl/ratII/synth/intII/mat_inv/mat_inv_ED97_15_ultrascale2_250/implementedSystem_power_synth.rpt
+| Design           : implementedSystem_toplevel
+| Device           : xcvu13p-fhga2104-2-e
+| Design State     : routed
+| Grade            : extended
+| Process          : typical
+| Characterization : Production
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 5.494        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 2.499        |
+| Device Static (W)        | 2.995        |
+| Effective TJA (C/W)      | 0.5          |
+| Max Ambient (C)          | 97.0         |
+| Junction Temperature (C) | 28.0         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.164 |        3 |       --- |             --- |
+| CLB Logic               |     0.607 |    38827 |       --- |             --- |
+|   LUT as Logic          |     0.420 |    12856 |   1728000 |            0.74 |
+|   LUT as Shift Register |     0.130 |     1858 |    791040 |            0.23 |
+|   Register              |     0.051 |    19609 |   3456000 |            0.57 |
+|   CARRY8                |     0.006 |      501 |    216000 |            0.23 |
+|   Others                |     0.000 |      644 |       --- |             --- |
+|   F7/F8 Muxes           |     0.000 |       84 |   1728000 |           <0.01 |
+| Signals                 |     0.793 |    31532 |       --- |             --- |
+| DSPs                    |     0.095 |       60 |     12288 |            0.49 |
+| I/O                     |     0.841 |      770 |       832 |           92.55 |
+| Static Power            |     2.995 |          |           |                 |
+| Total                   |     5.494 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++------------+-------------+-----------+-------------+------------+
+| Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++------------+-------------+-----------+-------------+------------+
+| Vccint     |       0.850 |     3.155 |       1.951 |      1.203 |
+| Vccint_io  |       0.850 |     0.180 |       0.037 |      0.143 |
+| Vccbram    |       0.850 |     0.021 |       0.000 |      0.021 |
+| Vccaux     |       1.800 |     0.882 |       0.000 |      0.882 |
+| Vccaux_io  |       1.800 |     0.250 |       0.146 |      0.104 |
+| Vcco33     |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18     |       1.800 |     0.304 |       0.304 |      0.000 |
+| Vcco15     |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135    |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12     |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vcco10     |       1.000 |     0.000 |       0.000 |      0.000 |
+| Vccadc     |       1.800 |     0.032 |       0.000 |      0.032 |
+| MGTYAVcc   |       0.900 |     0.000 |       0.000 |      0.000 |
+| MGTYAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTYVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
++------------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 0.5                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 0.7                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+| clk   | clk    |             4.0 |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-------------------------------------+-----------+
+| Name                                | Power (W) |
++-------------------------------------+-----------+
+| implementedSystem_toplevel          |     2.499 |
+|   Add110_impl_instance              |     0.008 |
+|     FPAddSubOp_instance             |     0.008 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Add11_impl_instance               |     0.009 |
+|     FPAddSubOp_instance             |     0.009 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Add121_impl_instance              |     0.009 |
+|     FPAddSubOp_instance             |     0.009 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Add23_impl_instance               |     0.009 |
+|     FPAddSubOp_instance             |     0.009 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Add28_impl_instance               |     0.009 |
+|     FPAddSubOp_instance             |     0.009 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Add30_impl_instance               |     0.008 |
+|     FPAddSubOp_instance             |     0.008 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Add31_impl_instance               |     0.008 |
+|     FPAddSubOp_instance             |     0.008 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Add32_impl_instance               |     0.008 |
+|     FPAddSubOp_instance             |     0.008 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Add6_impl_instance                |     0.008 |
+|     FPAddSubOp_instance             |     0.008 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Delay107No_instance               |     0.001 |
+|   Delay10No5_instance               |     0.004 |
+|   Delay11No2_instance               |    <0.001 |
+|   Delay12No1_instance               |    <0.001 |
+|   Delay12No2_instance               |    <0.001 |
+|   Delay12No3_instance               |    <0.001 |
+|   Delay12No6_instance               |     0.004 |
+|   Delay12No8_instance               |     0.001 |
+|   Delay12No_instance                |    <0.001 |
+|   Delay13No_instance                |     0.001 |
+|   Delay15No_instance                |    <0.001 |
+|   Delay16No_instance                |     0.004 |
+|   Delay17No1_instance               |     0.004 |
+|   Delay17No_instance                |     0.004 |
+|   Delay18No_instance                |     0.004 |
+|   Delay19No_instance                |     0.004 |
+|   Delay1No10_instance               |    <0.001 |
+|   Delay1No114_instance              |     0.001 |
+|   Delay1No115_instance              |    <0.001 |
+|   Delay1No116_instance              |    <0.001 |
+|   Delay1No11_instance               |     0.001 |
+|   Delay1No12_instance               |    <0.001 |
+|   Delay1No13_instance               |     0.001 |
+|   Delay1No14_instance               |    <0.001 |
+|   Delay1No15_instance               |     0.001 |
+|   Delay1No16_instance               |     0.001 |
+|   Delay1No17_instance               |     0.002 |
+|   Delay1No18_instance               |    <0.001 |
+|   Delay1No19_instance               |    <0.001 |
+|   Delay1No1_instance                |    <0.001 |
+|   Delay1No20_instance               |    <0.001 |
+|   Delay1No21_instance               |    <0.001 |
+|   Delay1No22_instance               |    <0.001 |
+|   Delay1No23_instance               |     0.001 |
+|   Delay1No24_instance               |     0.009 |
+|   Delay1No25_instance               |     0.006 |
+|   Delay1No26_instance               |     0.010 |
+|   Delay1No27_instance               |     0.010 |
+|   Delay1No28_instance               |     0.013 |
+|   Delay1No29_instance               |     0.010 |
+|   Delay1No2_instance                |     0.001 |
+|   Delay1No30_instance               |     0.015 |
+|   Delay1No31_instance               |     0.019 |
+|   Delay1No32_instance               |     0.006 |
+|   Delay1No33_instance               |     0.005 |
+|   Delay1No34_instance               |     0.007 |
+|   Delay1No35_instance               |     0.008 |
+|   Delay1No36_instance               |     0.006 |
+|   Delay1No37_instance               |     0.008 |
+|   Delay1No38_instance               |     0.006 |
+|   Delay1No39_instance               |     0.007 |
+|   Delay1No3_instance                |     0.002 |
+|   Delay1No40_instance               |     0.006 |
+|   Delay1No41_instance               |     0.008 |
+|   Delay1No42_instance               |     0.006 |
+|   Delay1No43_instance               |     0.009 |
+|   Delay1No44_instance               |     0.006 |
+|   Delay1No45_instance               |     0.009 |
+|   Delay1No46_instance               |     0.005 |
+|   Delay1No47_instance               |     0.007 |
+|   Delay1No48_instance               |    <0.001 |
+|   Delay1No49_instance               |    <0.001 |
+|   Delay1No4_instance                |    <0.001 |
+|   Delay1No50_instance               |    <0.001 |
+|   Delay1No51_instance               |    <0.001 |
+|   Delay1No52_instance               |    <0.001 |
+|   Delay1No53_instance               |    <0.001 |
+|   Delay1No54_instance               |    <0.001 |
+|   Delay1No55_instance               |    <0.001 |
+|   Delay1No56_instance               |    <0.001 |
+|   Delay1No57_instance               |    <0.001 |
+|   Delay1No58_instance               |    <0.001 |
+|   Delay1No59_instance               |     0.001 |
+|   Delay1No5_instance                |    <0.001 |
+|   Delay1No60_instance               |    <0.001 |
+|   Delay1No61_instance               |    <0.001 |
+|   Delay1No62_instance               |     0.001 |
+|   Delay1No63_instance               |     0.001 |
+|   Delay1No64_instance               |    <0.001 |
+|   Delay1No65_instance               |    <0.001 |
+|   Delay1No66_instance               |    <0.001 |
+|   Delay1No67_instance               |    <0.001 |
+|   Delay1No68_instance               |    <0.001 |
+|   Delay1No69_instance               |    <0.001 |
+|   Delay1No6_instance                |    <0.001 |
+|   Delay1No70_instance               |    <0.001 |
+|   Delay1No71_instance               |    <0.001 |
+|   Delay1No72_instance               |    <0.001 |
+|   Delay1No73_instance               |    <0.001 |
+|   Delay1No74_instance               |     0.005 |
+|   Delay1No75_instance               |     0.009 |
+|   Delay1No76_instance               |     0.006 |
+|   Delay1No77_instance               |     0.008 |
+|   Delay1No78_instance               |     0.006 |
+|   Delay1No79_instance               |     0.007 |
+|   Delay1No7_instance                |     0.001 |
+|   Delay1No80_instance               |     0.005 |
+|   Delay1No81_instance               |     0.007 |
+|   Delay1No82_instance               |     0.005 |
+|   Delay1No83_instance               |     0.007 |
+|   Delay1No84_instance               |     0.004 |
+|   Delay1No85_instance               |     0.005 |
+|   Delay1No86_instance               |    <0.001 |
+|   Delay1No88_instance               |     0.001 |
+|   Delay1No89_instance               |    <0.001 |
+|   Delay1No8_instance                |    <0.001 |
+|   Delay1No90_instance               |    <0.001 |
+|   Delay1No91_instance               |    <0.001 |
+|   Delay1No92_instance               |     0.001 |
+|   Delay1No93_instance               |    <0.001 |
+|   Delay1No94_instance               |    <0.001 |
+|   Delay1No95_instance               |    <0.001 |
+|   Delay1No96_instance               |     0.002 |
+|   Delay1No97_instance               |     0.001 |
+|   Delay1No9_instance                |     0.001 |
+|   Delay1No_instance                 |    <0.001 |
+|   Delay20No_instance                |     0.001 |
+|   Delay22No_instance                |     0.004 |
+|   Delay23No_instance                |    <0.001 |
+|   Delay25No_instance                |     0.004 |
+|   Delay30No_instance                |     0.004 |
+|   Delay33No_instance                |     0.004 |
+|   Delay3No27_instance               |    <0.001 |
+|   Delay43No_instance                |     0.006 |
+|   Delay47No_instance                |     0.004 |
+|   Delay4No13_instance               |     0.001 |
+|   Delay4No17_instance               |    <0.001 |
+|   Delay4No7_instance                |    <0.001 |
+|   Delay58No_instance                |     0.006 |
+|   Delay5No11_instance               |     0.002 |
+|   Delay5No20_instance               |    <0.001 |
+|   Delay5No21_instance               |     0.002 |
+|   Delay5No6_instance                |     0.003 |
+|   Delay5No_instance                 |     0.002 |
+|   Delay65No_instance                |     0.007 |
+|   Delay6No10_instance               |     0.002 |
+|   Delay6No13_instance               |     0.004 |
+|   Delay73No_instance                |     0.009 |
+|   Delay74No_instance                |     0.004 |
+|   Delay76No_instance                |     0.004 |
+|   Delay78No1_instance               |     0.009 |
+|   Delay78No_instance                |     0.009 |
+|   Delay7No2_instance                |     0.002 |
+|   Delay91No1_instance               |    <0.001 |
+|   Delay91No_instance                |     0.001 |
+|   Delay94No_instance                |     0.001 |
+|   Delay95No_instance                |     0.004 |
+|   Divide_impl_instance              |     0.144 |
+|     SelFunctionTable1               |     0.001 |
+|     SelFunctionTable2               |     0.001 |
+|     SelFunctionTable3               |     0.001 |
+|     SelFunctionTable4               |    <0.001 |
+|     SelFunctionTable5               |     0.001 |
+|     SelFunctionTable6               |    <0.001 |
+|     SelFunctionTable7               |     0.001 |
+|     SelFunctionTable8               |     0.001 |
+|   Ldiff_UU_del_1_IBUF[0]_inst       |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[10]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[11]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[12]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[13]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[14]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[15]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[16]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[17]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[18]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[19]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[1]_inst       |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[20]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[21]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[22]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[23]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[24]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[25]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[26]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[27]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[28]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[29]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[2]_inst       |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[30]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[31]_inst      |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[3]_inst       |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[4]_inst       |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[5]_inst       |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[6]_inst       |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[7]_inst       |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[8]_inst       |    <0.001 |
+|   Ldiff_UU_del_1_IBUF[9]_inst       |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[0]_inst       |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[10]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[11]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[12]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[13]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[14]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[15]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[16]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[17]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[18]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[19]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[1]_inst       |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[20]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[21]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[22]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[23]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[24]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[25]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[26]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[27]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[28]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[29]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[2]_inst       |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[30]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[31]_inst      |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[3]_inst       |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[4]_inst       |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[5]_inst       |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[6]_inst       |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[7]_inst       |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[8]_inst       |    <0.001 |
+|   Ldiff_UV_del_1_IBUF[9]_inst       |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[0]_inst       |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[10]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[11]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[12]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[13]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[14]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[15]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[16]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[17]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[18]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[19]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[1]_inst       |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[20]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[21]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[22]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[23]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[24]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[25]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[26]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[27]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[28]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[29]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[2]_inst       |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[30]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[31]_inst      |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[3]_inst       |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[4]_inst       |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[5]_inst       |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[6]_inst       |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[7]_inst       |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[8]_inst       |    <0.001 |
+|   Ldiff_UW_del_1_IBUF[9]_inst       |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[0]_inst       |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[10]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[11]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[12]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[13]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[14]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[15]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[16]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[17]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[18]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[19]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[1]_inst       |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[20]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[21]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[22]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[23]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[24]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[25]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[26]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[27]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[28]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[29]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[2]_inst       |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[30]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[31]_inst      |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[3]_inst       |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[4]_inst       |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[5]_inst       |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[6]_inst       |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[7]_inst       |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[8]_inst       |    <0.001 |
+|   Ldiff_VU_del_1_IBUF[9]_inst       |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[0]_inst       |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[10]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[11]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[12]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[13]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[14]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[15]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[16]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[17]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[18]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[19]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[1]_inst       |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[20]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[21]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[22]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[23]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[24]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[25]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[26]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[27]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[28]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[29]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[2]_inst       |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[30]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[31]_inst      |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[3]_inst       |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[4]_inst       |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[5]_inst       |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[6]_inst       |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[7]_inst       |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[8]_inst       |    <0.001 |
+|   Ldiff_VV_del_1_IBUF[9]_inst       |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[0]_inst       |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[10]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[11]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[12]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[13]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[14]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[15]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[16]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[17]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[18]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[19]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[1]_inst       |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[20]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[21]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[22]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[23]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[24]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[25]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[26]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[27]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[28]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[29]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[2]_inst       |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[30]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[31]_inst      |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[3]_inst       |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[4]_inst       |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[5]_inst       |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[6]_inst       |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[7]_inst       |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[8]_inst       |    <0.001 |
+|   Ldiff_VW_del_1_IBUF[9]_inst       |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[0]_inst       |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[10]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[11]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[12]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[13]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[14]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[15]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[16]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[17]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[18]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[19]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[1]_inst       |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[20]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[21]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[22]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[23]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[24]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[25]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[26]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[27]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[28]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[29]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[2]_inst       |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[30]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[31]_inst      |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[3]_inst       |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[4]_inst       |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[5]_inst       |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[6]_inst       |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[7]_inst       |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[8]_inst       |    <0.001 |
+|   Ldiff_WU_del_1_IBUF[9]_inst       |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[0]_inst       |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[10]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[11]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[12]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[13]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[14]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[15]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[16]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[17]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[18]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[19]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[1]_inst       |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[20]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[21]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[22]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[23]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[24]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[25]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[26]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[27]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[28]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[29]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[2]_inst       |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[30]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[31]_inst      |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[3]_inst       |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[4]_inst       |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[5]_inst       |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[6]_inst       |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[7]_inst       |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[8]_inst       |    <0.001 |
+|   Ldiff_WV_del_1_IBUF[9]_inst       |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[0]_inst       |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[10]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[11]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[12]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[13]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[14]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[15]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[16]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[17]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[18]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[19]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[1]_inst       |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[20]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[21]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[22]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[23]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[24]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[25]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[26]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[27]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[28]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[29]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[2]_inst       |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[30]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[31]_inst      |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[3]_inst       |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[4]_inst       |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[5]_inst       |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[6]_inst       |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[7]_inst       |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[8]_inst       |    <0.001 |
+|   Ldiff_WW_del_1_IBUF[9]_inst       |    <0.001 |
+|   MUX_Add11_impl_0_instance         |     0.001 |
+|   MUX_Add11_impl_1_instance         |     0.001 |
+|   MUX_Add121_impl_0_instance        |     0.003 |
+|   MUX_Add121_impl_1_instance        |     0.003 |
+|   MUX_Add23_impl_1_instance         |     0.004 |
+|   MUX_Add31_impl_1_instance         |     0.003 |
+|   MUX_Add32_impl_0_instance         |     0.003 |
+|   MUX_Add32_impl_1_instance         |     0.003 |
+|   MUX_Add6_impl_0_instance          |    <0.001 |
+|   MUX_Add6_impl_1_instance          |    <0.001 |
+|   MUX_Product108_impl_0_instance    |     0.003 |
+|   MUX_Product108_impl_1_instance    |     0.001 |
+|   MUX_Product110_impl_0_instance    |     0.004 |
+|   MUX_Product110_impl_1_instance    |     0.003 |
+|   MUX_Product111_impl_0_instance    |     0.003 |
+|   MUX_Product111_impl_1_instance    |     0.002 |
+|   MUX_Product121_impl_0_instance    |     0.003 |
+|   MUX_Product121_impl_1_instance    |     0.002 |
+|   MUX_Product191_impl_0_instance    |     0.003 |
+|   MUX_Product191_impl_1_instance    |     0.001 |
+|   MUX_Product210_impl_0_instance    |     0.003 |
+|   MUX_Product210_impl_1_instance    |     0.003 |
+|   MUX_Product241_impl_0_instance    |     0.003 |
+|   MUX_Product241_impl_1_instance    |     0.001 |
+|   MUX_Product25_impl_0_instance     |     0.003 |
+|   MUX_Product25_impl_1_instance     |    <0.001 |
+|   MUX_Product261_impl_0_instance    |     0.003 |
+|   MUX_Product261_impl_1_instance    |     0.001 |
+|   MUX_Product26_impl_0_instance     |     0.003 |
+|   MUX_Product26_impl_1_instance     |    <0.001 |
+|   MUX_Product27_impl_0_instance     |     0.003 |
+|   MUX_Product27_impl_1_instance     |     0.001 |
+|   MUX_Product30_impl_0_instance     |     0.004 |
+|   MUX_Product30_impl_1_instance     |     0.001 |
+|   MUX_Product310_impl_1_instance    |     0.002 |
+|   MUX_Product410_impl_0_instance    |     0.003 |
+|   MUX_Product410_impl_1_instance    |     0.003 |
+|   MUX_Product431_impl_0_instance    |     0.002 |
+|   MUX_Product431_impl_1_instance    |     0.002 |
+|   MUX_Product461_impl_0_instance    |     0.003 |
+|   MUX_Product461_impl_1_instance    |     0.002 |
+|   MUX_Product48_impl_0_instance     |     0.004 |
+|   MUX_Product48_impl_1_instance     |     0.002 |
+|   MUX_Product491_impl_0_instance    |     0.003 |
+|   MUX_Product491_impl_1_instance    |    <0.001 |
+|   MUX_Product510_impl_0_instance    |     0.003 |
+|   MUX_Product510_impl_1_instance    |     0.003 |
+|   MUX_Product610_impl_0_instance    |     0.003 |
+|   MUX_Product610_impl_1_instance    |     0.003 |
+|   MUX_Product75_impl_0_instance     |     0.003 |
+|   MUX_Product75_impl_1_instance     |     0.001 |
+|   MUX_Product810_impl_0_instance    |     0.002 |
+|   MUX_Product810_impl_1_instance    |     0.002 |
+|   MUX_Product82_impl_0_instance     |     0.003 |
+|   MUX_Product82_impl_1_instance     |     0.001 |
+|   MUX_Product89_impl_0_instance     |     0.003 |
+|   MUX_Product89_impl_1_instance     |     0.002 |
+|   MUX_Product910_impl_0_instance    |     0.003 |
+|   MUX_Product910_impl_1_instance    |     0.002 |
+|   MUX_Product92_impl_0_instance     |     0.003 |
+|   MUX_Product92_impl_1_instance     |     0.001 |
+|   MUX_Product95_impl_0_instance     |     0.003 |
+|   MUX_Product95_impl_1_instance     |    <0.001 |
+|   MUX_Product98_impl_0_instance     |     0.003 |
+|   MUX_Product98_impl_1_instance     |     0.002 |
+|   MUX_Subtract11_impl_1_instance    |     0.001 |
+|   MUX_Subtract12_impl_1_instance    |     0.003 |
+|   MUX_Subtract3_impl_0_instance     |    <0.001 |
+|   MUX_Subtract3_impl_1_LUT_instance |    <0.001 |
+|     instLUT                         |    <0.001 |
+|   MUX_Subtract3_impl_1_instance     |    <0.001 |
+|   ModCount61_instance               |     0.152 |
+|   Product108_impl_instance          |     0.008 |
+|     SignificandMultiplication       |     0.005 |
+|   Product109_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.004 |
+|   Product110_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product111_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product121_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product191_impl_instance          |     0.006 |
+|     SignificandMultiplication       |     0.004 |
+|   Product210_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product241_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product25_impl_instance           |     0.006 |
+|     SignificandMultiplication       |     0.005 |
+|   Product261_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product26_impl_instance           |     0.006 |
+|     SignificandMultiplication       |     0.004 |
+|   Product27_impl_instance           |     0.007 |
+|     SignificandMultiplication       |     0.004 |
+|   Product30_impl_instance           |     0.006 |
+|     SignificandMultiplication       |     0.004 |
+|   Product310_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product410_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product431_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product461_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product48_impl_instance           |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product491_impl_instance          |     0.006 |
+|     SignificandMultiplication       |     0.004 |
+|   Product510_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product610_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product710_impl_instance          |     0.006 |
+|     SignificandMultiplication       |     0.004 |
+|   Product75_impl_instance           |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product810_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product82_impl_instance           |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product89_impl_instance           |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product910_impl_instance          |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product92_impl_instance           |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product95_impl_instance           |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   Product98_impl_instance           |     0.007 |
+|     SignificandMultiplication       |     0.005 |
+|   R_U_IBUF[0]_inst                  |    <0.001 |
+|   R_U_IBUF[10]_inst                 |    <0.001 |
+|   R_U_IBUF[11]_inst                 |    <0.001 |
+|   R_U_IBUF[12]_inst                 |    <0.001 |
+|   R_U_IBUF[13]_inst                 |    <0.001 |
+|   R_U_IBUF[14]_inst                 |    <0.001 |
+|   R_U_IBUF[15]_inst                 |    <0.001 |
+|   R_U_IBUF[16]_inst                 |    <0.001 |
+|   R_U_IBUF[17]_inst                 |    <0.001 |
+|   R_U_IBUF[18]_inst                 |    <0.001 |
+|   R_U_IBUF[19]_inst                 |    <0.001 |
+|   R_U_IBUF[1]_inst                  |    <0.001 |
+|   R_U_IBUF[20]_inst                 |    <0.001 |
+|   R_U_IBUF[21]_inst                 |    <0.001 |
+|   R_U_IBUF[22]_inst                 |    <0.001 |
+|   R_U_IBUF[23]_inst                 |    <0.001 |
+|   R_U_IBUF[24]_inst                 |    <0.001 |
+|   R_U_IBUF[25]_inst                 |    <0.001 |
+|   R_U_IBUF[26]_inst                 |    <0.001 |
+|   R_U_IBUF[27]_inst                 |    <0.001 |
+|   R_U_IBUF[28]_inst                 |    <0.001 |
+|   R_U_IBUF[29]_inst                 |    <0.001 |
+|   R_U_IBUF[2]_inst                  |    <0.001 |
+|   R_U_IBUF[30]_inst                 |    <0.001 |
+|   R_U_IBUF[31]_inst                 |    <0.001 |
+|   R_U_IBUF[3]_inst                  |    <0.001 |
+|   R_U_IBUF[4]_inst                  |    <0.001 |
+|   R_U_IBUF[5]_inst                  |    <0.001 |
+|   R_U_IBUF[6]_inst                  |    <0.001 |
+|   R_U_IBUF[7]_inst                  |    <0.001 |
+|   R_U_IBUF[8]_inst                  |    <0.001 |
+|   R_U_IBUF[9]_inst                  |    <0.001 |
+|   R_V_IBUF[0]_inst                  |    <0.001 |
+|   R_V_IBUF[10]_inst                 |    <0.001 |
+|   R_V_IBUF[11]_inst                 |    <0.001 |
+|   R_V_IBUF[12]_inst                 |    <0.001 |
+|   R_V_IBUF[13]_inst                 |    <0.001 |
+|   R_V_IBUF[14]_inst                 |    <0.001 |
+|   R_V_IBUF[15]_inst                 |    <0.001 |
+|   R_V_IBUF[16]_inst                 |    <0.001 |
+|   R_V_IBUF[17]_inst                 |    <0.001 |
+|   R_V_IBUF[18]_inst                 |    <0.001 |
+|   R_V_IBUF[19]_inst                 |    <0.001 |
+|   R_V_IBUF[1]_inst                  |    <0.001 |
+|   R_V_IBUF[20]_inst                 |    <0.001 |
+|   R_V_IBUF[21]_inst                 |    <0.001 |
+|   R_V_IBUF[22]_inst                 |    <0.001 |
+|   R_V_IBUF[23]_inst                 |    <0.001 |
+|   R_V_IBUF[24]_inst                 |    <0.001 |
+|   R_V_IBUF[25]_inst                 |    <0.001 |
+|   R_V_IBUF[26]_inst                 |    <0.001 |
+|   R_V_IBUF[27]_inst                 |    <0.001 |
+|   R_V_IBUF[28]_inst                 |    <0.001 |
+|   R_V_IBUF[29]_inst                 |    <0.001 |
+|   R_V_IBUF[2]_inst                  |    <0.001 |
+|   R_V_IBUF[30]_inst                 |    <0.001 |
+|   R_V_IBUF[31]_inst                 |    <0.001 |
+|   R_V_IBUF[3]_inst                  |    <0.001 |
+|   R_V_IBUF[4]_inst                  |    <0.001 |
+|   R_V_IBUF[5]_inst                  |    <0.001 |
+|   R_V_IBUF[6]_inst                  |    <0.001 |
+|   R_V_IBUF[7]_inst                  |    <0.001 |
+|   R_V_IBUF[8]_inst                  |    <0.001 |
+|   R_V_IBUF[9]_inst                  |    <0.001 |
+|   R_W_IBUF[0]_inst                  |    <0.001 |
+|   R_W_IBUF[10]_inst                 |    <0.001 |
+|   R_W_IBUF[11]_inst                 |    <0.001 |
+|   R_W_IBUF[12]_inst                 |    <0.001 |
+|   R_W_IBUF[13]_inst                 |    <0.001 |
+|   R_W_IBUF[14]_inst                 |    <0.001 |
+|   R_W_IBUF[15]_inst                 |    <0.001 |
+|   R_W_IBUF[16]_inst                 |    <0.001 |
+|   R_W_IBUF[17]_inst                 |    <0.001 |
+|   R_W_IBUF[18]_inst                 |    <0.001 |
+|   R_W_IBUF[19]_inst                 |    <0.001 |
+|   R_W_IBUF[1]_inst                  |    <0.001 |
+|   R_W_IBUF[20]_inst                 |    <0.001 |
+|   R_W_IBUF[21]_inst                 |    <0.001 |
+|   R_W_IBUF[22]_inst                 |    <0.001 |
+|   R_W_IBUF[23]_inst                 |    <0.001 |
+|   R_W_IBUF[24]_inst                 |    <0.001 |
+|   R_W_IBUF[25]_inst                 |    <0.001 |
+|   R_W_IBUF[26]_inst                 |    <0.001 |
+|   R_W_IBUF[27]_inst                 |    <0.001 |
+|   R_W_IBUF[28]_inst                 |    <0.001 |
+|   R_W_IBUF[29]_inst                 |    <0.001 |
+|   R_W_IBUF[2]_inst                  |    <0.001 |
+|   R_W_IBUF[30]_inst                 |    <0.001 |
+|   R_W_IBUF[31]_inst                 |    <0.001 |
+|   R_W_IBUF[3]_inst                  |    <0.001 |
+|   R_W_IBUF[4]_inst                  |    <0.001 |
+|   R_W_IBUF[5]_inst                  |    <0.001 |
+|   R_W_IBUF[6]_inst                  |    <0.001 |
+|   R_W_IBUF[7]_inst                  |    <0.001 |
+|   R_W_IBUF[8]_inst                  |    <0.001 |
+|   R_W_IBUF[9]_inst                  |    <0.001 |
+|   SharedReg100_instance             |     0.003 |
+|   SharedReg101_instance             |     0.002 |
+|   SharedReg102_instance             |     0.004 |
+|   SharedReg103_instance             |     0.009 |
+|   SharedReg104_instance             |     0.004 |
+|   SharedReg105_instance             |     0.012 |
+|   SharedReg106_instance             |     0.002 |
+|   SharedReg107_instance             |     0.002 |
+|   SharedReg108_instance             |     0.001 |
+|   SharedReg109_instance             |     0.002 |
+|   SharedReg10_instance              |     0.001 |
+|   SharedReg110_instance             |     0.004 |
+|   SharedReg111_instance             |     0.002 |
+|   SharedReg112_instance             |     0.005 |
+|   SharedReg113_instance             |     0.002 |
+|   SharedReg114_instance             |     0.005 |
+|   SharedReg115_instance             |     0.003 |
+|   SharedReg116_instance             |     0.005 |
+|   SharedReg117_instance             |     0.005 |
+|   SharedReg118_instance             |     0.003 |
+|   SharedReg119_instance             |    <0.001 |
+|   SharedReg11_instance              |    <0.001 |
+|   SharedReg120_instance             |     0.003 |
+|   SharedReg121_instance             |    <0.001 |
+|   SharedReg122_instance             |     0.001 |
+|   SharedReg123_instance             |     0.003 |
+|   SharedReg124_instance             |     0.002 |
+|   SharedReg125_instance             |     0.002 |
+|   SharedReg126_instance             |     0.005 |
+|   SharedReg127_instance             |     0.003 |
+|   SharedReg128_instance             |     0.003 |
+|   SharedReg129_instance             |     0.001 |
+|   SharedReg12_instance              |    <0.001 |
+|   SharedReg130_instance             |     0.002 |
+|   SharedReg131_instance             |     0.002 |
+|   SharedReg132_instance             |     0.003 |
+|   SharedReg133_instance             |     0.001 |
+|   SharedReg134_instance             |     0.001 |
+|   SharedReg135_instance             |     0.005 |
+|   SharedReg136_instance             |     0.005 |
+|   SharedReg137_instance             |     0.002 |
+|   SharedReg138_instance             |     0.002 |
+|   SharedReg139_instance             |     0.005 |
+|   SharedReg13_instance              |     0.001 |
+|   SharedReg140_instance             |     0.001 |
+|   SharedReg141_instance             |     0.002 |
+|   SharedReg142_instance             |    <0.001 |
+|   SharedReg143_instance             |     0.001 |
+|   SharedReg144_instance             |     0.005 |
+|   SharedReg145_instance             |     0.003 |
+|   SharedReg146_instance             |     0.003 |
+|   SharedReg147_instance             |     0.004 |
+|   SharedReg148_instance             |     0.002 |
+|   SharedReg149_instance             |     0.001 |
+|   SharedReg14_instance              |     0.001 |
+|   SharedReg150_instance             |     0.002 |
+|   SharedReg151_instance             |     0.002 |
+|   SharedReg152_instance             |     0.002 |
+|   SharedReg153_instance             |     0.002 |
+|   SharedReg154_instance             |     0.002 |
+|   SharedReg155_instance             |     0.002 |
+|   SharedReg156_instance             |     0.002 |
+|   SharedReg157_instance             |     0.001 |
+|   SharedReg158_instance             |     0.007 |
+|   SharedReg159_instance             |     0.003 |
+|   SharedReg15_instance              |    <0.001 |
+|   SharedReg160_instance             |     0.007 |
+|   SharedReg161_instance             |     0.001 |
+|   SharedReg162_instance             |    <0.001 |
+|   SharedReg163_instance             |     0.005 |
+|   SharedReg164_instance             |     0.001 |
+|   SharedReg165_instance             |    <0.001 |
+|   SharedReg166_instance             |     0.007 |
+|   SharedReg167_instance             |     0.002 |
+|   SharedReg168_instance             |     0.002 |
+|   SharedReg169_instance             |    <0.001 |
+|   SharedReg16_instance              |    <0.001 |
+|   SharedReg170_instance             |     0.002 |
+|   SharedReg171_instance             |     0.002 |
+|   SharedReg172_instance             |     0.005 |
+|   SharedReg173_instance             |     0.004 |
+|   SharedReg174_instance             |     0.005 |
+|   SharedReg175_instance             |     0.002 |
+|   SharedReg176_instance             |     0.002 |
+|   SharedReg177_instance             |     0.002 |
+|   SharedReg178_instance             |     0.002 |
+|   SharedReg179_instance             |     0.002 |
+|   SharedReg17_instance              |     0.001 |
+|   SharedReg180_instance             |    <0.001 |
+|   SharedReg181_instance             |    <0.001 |
+|   SharedReg182_instance             |    <0.001 |
+|   SharedReg183_instance             |    <0.001 |
+|   SharedReg184_instance             |    <0.001 |
+|   SharedReg185_instance             |    <0.001 |
+|   SharedReg186_instance             |    <0.001 |
+|   SharedReg187_instance             |    <0.001 |
+|   SharedReg188_instance             |    <0.001 |
+|   SharedReg189_instance             |    <0.001 |
+|   SharedReg18_instance              |    <0.001 |
+|   SharedReg190_instance             |    <0.001 |
+|   SharedReg191_instance             |    <0.001 |
+|   SharedReg192_instance             |    <0.001 |
+|   SharedReg193_instance             |    <0.001 |
+|   SharedReg194_instance             |    <0.001 |
+|   SharedReg195_instance             |    <0.001 |
+|   SharedReg196_instance             |    <0.001 |
+|   SharedReg197_instance             |    <0.001 |
+|   SharedReg198_instance             |    <0.001 |
+|   SharedReg19_instance              |     0.002 |
+|   SharedReg1_instance               |    <0.001 |
+|   SharedReg20_instance              |     0.001 |
+|   SharedReg21_instance              |    <0.001 |
+|   SharedReg22_instance              |    <0.001 |
+|   SharedReg23_instance              |    <0.001 |
+|   SharedReg24_instance              |    <0.001 |
+|   SharedReg25_instance              |    <0.001 |
+|   SharedReg26_instance              |    <0.001 |
+|   SharedReg27_instance              |    <0.001 |
+|   SharedReg28_instance              |     0.002 |
+|   SharedReg29_instance              |    <0.001 |
+|   SharedReg2_instance               |    <0.001 |
+|   SharedReg30_instance              |    <0.001 |
+|   SharedReg31_instance              |    <0.001 |
+|   SharedReg32_instance              |    <0.001 |
+|   SharedReg33_instance              |     0.001 |
+|   SharedReg34_instance              |    <0.001 |
+|   SharedReg35_instance              |     0.002 |
+|   SharedReg36_instance              |    <0.001 |
+|   SharedReg37_instance              |    <0.001 |
+|   SharedReg38_instance              |    <0.001 |
+|   SharedReg39_instance              |    <0.001 |
+|   SharedReg3_instance               |    <0.001 |
+|   SharedReg40_instance              |     0.001 |
+|   SharedReg41_instance              |    <0.001 |
+|   SharedReg42_instance              |    <0.001 |
+|   SharedReg43_instance              |     0.002 |
+|   SharedReg44_instance              |     0.002 |
+|   SharedReg45_instance              |     0.002 |
+|   SharedReg46_instance              |     0.005 |
+|   SharedReg47_instance              |     0.004 |
+|   SharedReg48_instance              |     0.003 |
+|   SharedReg49_instance              |     0.002 |
+|   SharedReg4_instance               |    <0.001 |
+|   SharedReg50_instance              |     0.001 |
+|   SharedReg51_instance              |    <0.001 |
+|   SharedReg53_instance              |     0.001 |
+|   SharedReg54_instance              |     0.002 |
+|   SharedReg55_instance              |     0.002 |
+|   SharedReg57_instance              |    <0.001 |
+|   SharedReg58_instance              |     0.002 |
+|   SharedReg59_instance              |     0.002 |
+|   SharedReg5_instance               |     0.001 |
+|   SharedReg61_instance              |     0.001 |
+|   SharedReg62_instance              |     0.001 |
+|   SharedReg64_instance              |     0.001 |
+|   SharedReg65_instance              |     0.001 |
+|   SharedReg67_instance              |     0.004 |
+|   SharedReg68_instance              |     0.004 |
+|   SharedReg69_instance              |     0.002 |
+|   SharedReg6_instance               |    <0.001 |
+|   SharedReg70_instance              |     0.005 |
+|   SharedReg71_instance              |     0.002 |
+|   SharedReg73_instance              |     0.001 |
+|   SharedReg74_instance              |     0.002 |
+|   SharedReg75_instance              |     0.002 |
+|   SharedReg77_instance              |    <0.001 |
+|   SharedReg78_instance              |     0.001 |
+|   SharedReg79_instance              |     0.001 |
+|   SharedReg7_instance               |    <0.001 |
+|   SharedReg81_instance              |     0.002 |
+|   SharedReg82_instance              |     0.005 |
+|   SharedReg83_instance              |     0.003 |
+|   SharedReg84_instance              |     0.002 |
+|   SharedReg85_instance              |     0.005 |
+|   SharedReg86_instance              |     0.002 |
+|   SharedReg87_instance              |     0.002 |
+|   SharedReg88_instance              |     0.009 |
+|   SharedReg89_instance              |     0.002 |
+|   SharedReg8_instance               |     0.001 |
+|   SharedReg90_instance              |     0.003 |
+|   SharedReg91_instance              |     0.001 |
+|   SharedReg92_instance              |     0.009 |
+|   SharedReg93_instance              |     0.005 |
+|   SharedReg94_instance              |     0.002 |
+|   SharedReg95_instance              |     0.001 |
+|   SharedReg96_instance              |     0.002 |
+|   SharedReg97_instance              |     0.003 |
+|   SharedReg98_instance              |     0.002 |
+|   SharedReg99_instance              |     0.002 |
+|   SharedReg9_instance               |    <0.001 |
+|   SharedReg_instance                |    <0.001 |
+|   Subtract11_impl_instance          |     0.009 |
+|     FPAddSubOp_instance             |     0.009 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Subtract12_impl_instance          |     0.009 |
+|     FPAddSubOp_instance             |     0.009 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   Subtract3_impl_instance           |     0.008 |
+|     FPAddSubOp_instance             |     0.008 |
+|       LZC_component                 |     0.004 |
+|       fracAdder                     |     0.001 |
+|   clk_IBUF_inst                     |    <0.001 |
+|   rst_IBUF_inst                     |    <0.001 |
++-------------------------------------+-----------+
+
+

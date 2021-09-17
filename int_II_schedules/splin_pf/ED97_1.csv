@@ -1,0 +1,30 @@
+# II 8
+# graph /home/nfiege/Repositories/hatschet/benchmarks/origami//splin_pf.graphml
+# resourceModel /home/nfiege/Repositories/experiments/trunk/rmIntII/origami//splin_pf/RM1.xml
+# vertex;cycle;fu
+Const3;0;0
+Const4;0;0
+Const5;0;0
+In1;0;0
+Const;0;0
+Const1;0;0
+Const2;0;0
+Const6;0;0
+Const7;0;0
+Product;2;0
+Product1;1;0
+Product2;6;0
+Product3;8;0
+Product4;3;0
+Product5;4;0
+Product6;7;0
+Product7;5;0
+Out1;46;0
+SumTree0;6;0
+SumTree1;11;0
+SumTree2;16;0
+SumTree3;21;0
+SumTree4;26;0
+SumTree5;31;0
+SumTree6;36;0
+SumTree7;41;0

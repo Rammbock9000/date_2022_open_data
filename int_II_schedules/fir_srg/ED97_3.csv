@@ -1,0 +1,21 @@
+# II 1
+# graph /home/nfiege/Repositories/hatschet/benchmarks/origami//fir_srg.graphml
+# resourceModel /home/nfiege/Repositories/experiments/trunk/rmIntII/origami//fir_srg/RM3.xml
+# vertex;cycle;fu
+In_x;0;0
+Add;10;0
+CMult;1;0
+CMult1;1;1
+CMult2;1;2
+CMult3;1;3
+Const;0;0
+Const2;0;0
+Const3;0;0
+Constant2;0;0
+Subt;15;0
+Subt1;5;1
+Out_x(0);0;0
+Out_x(1);0;0
+Out_x(2);0;0
+Out_x(3);0;0
+Out_y;20;0

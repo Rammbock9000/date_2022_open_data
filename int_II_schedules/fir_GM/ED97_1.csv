@@ -1,0 +1,20 @@
+# II 6
+# graph /home/nfiege/Repositories/hatschet/benchmarks/origami//fir_GM.graphml
+# resourceModel /home/nfiege/Repositories/experiments/trunk/rmIntII/origami//fir_GM/RM1.xml
+# vertex;cycle;fu
+Constant3;0;0
+Product;6;0
+Product1;5;0
+X;0;0
+Constant;0;0
+Constant1;0;0
+Constant2;0;0
+Product2;10;0
+Product3;2;0
+Sum7;1;0
+Sum8;0;0
+Sum9;5;0
+Y;25;0
+Sum1Tree0;10;0
+Sum1Tree1;15;0
+Sum1Tree2;20;0

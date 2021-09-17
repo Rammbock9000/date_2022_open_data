@@ -1,0 +1,45 @@
+\begin{landscape}
+\begin{figure*}[tbp]
+\centering
+\begin{tikzpicture}
+\pgfplotstableread[col sep=semicolon]{../synth_results/energy_plot/eps_savings.csv}{\loadedtable}
+\begin{axis}[
+  ybar = 0pt,
+  ylabel = {Average 
+  $\Delta{E_s}$
+  [\%]},
+  width = 200mm,
+  height= 80mm,
+  xtick = data,
+  xticklabels={\testname{hilb}, \testname{gen}, \testname{gm}, \testname{srg}, \testname{ycbcr}, \testname{rgb}, \testname{spline}, \testname{lin. phase}, \testname{sam}, \testname{iir}, \testname{cholesky}, \testname{r-2 FFT}},
+  x tick label style={anchor=center, yshift=-1.75ex},
+  xtick style={draw=none},
+  ytick style={draw=none},
+  ymajorgrids=true,
+  bar width = 8pt,
+  ymin = -20,
+  ymax = 40,
+  ytick distance=10,
+  enlarge x limits = {abs=0.6},
+  legend style={at={(0.755,0.8)},anchor=west},
+  legend cell align = left,
+]
+  \newcommand\mkplot[5]{
+    \addplot[ybar, draw=black, fill=#1]
+      plot [error bars/.cd, y dir=both, y explicit]
+      table [x expr = \coordindex, y=#2, y error minus=#3, y error plus=#4] {\loadedtable};
+    \addlegendentryexpanded{#5};
+  }
+  \mkplot{c0}{uniformAvg}{uniformMinus}{uniformPlus}{prop. exact uniform}
+  \mkplot{c2}{nonuniformAvg}{nonuniformMinus}{nonuniformPlus}{exact non-uniform [1]}
+  
+  % draw ellipse with info why it failed to produce results
+  \draw[red] (105.0,200.0) circle (10.0 and 20.0);
+  \node[draw=none, text width=3cm, align=center] at (105.0,105.0) {synthesis failed: \\ insufficient ports};
+\end{axis}
+\end{tikzpicture}
+\caption{Average energy per sample savings $\Delta E_s$ for Pareto-optimal systems regarding resource usage and II implemented with the proposed exact uniform scheduler and the exact nonuniform scheduler from [1] compared to the best integer-II implementations using the scheduler from [6] for minimal resource allocations. Error margins denote minimum and maximum values. Benchmark size increases from left to right. 
+}
+\label{fig:eps_savings_origami}
+\end{figure*}
+\end{landscape}

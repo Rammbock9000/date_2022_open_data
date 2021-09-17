@@ -1,0 +1,28 @@
+# II 1
+# graph /home/nfiege/Repositories/hatschet/benchmarks/origami//rgb_tr.graphml
+# resourceModel /home/nfiege/Repositories/experiments/trunk/rmIntII/origami//rgb_tr/RM3.xml
+# vertex;cycle;fu
+In_R;0;0
+In_G;0;0
+In_B;0;0
+Constant;0;0
+Constant1;0;0
+Constant2;0;0
+Constant3;0;0
+Constant4;0;0
+Constant5;0;0
+Product;6;0
+Product1;6;1
+Product2;25;2
+Product3;25;3
+Subtract;1;0
+Subtract1;1;1
+Subtract2;20;2
+Sum1;20;3
+Sum2;29;0
+Sum3;29;1
+Out_CR;34;0
+Out_Y;20;0
+Out_CB;34;0
+SumTree0;10;2
+SumTree1;15;3

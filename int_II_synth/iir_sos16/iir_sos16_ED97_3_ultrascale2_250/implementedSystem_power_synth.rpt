@@ -1,0 +1,359 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date             : Mon Apr 20 15:05:42 2020
+| Host             : animal.digi.e-technik.uni-kassel.de running 64-bit CentOS Linux release 7.7.1908 (Core)
+| Command          : report_power -file /home/nfiege/Repositories/origami/vhdl/ratII/synth/intII/iir_sos16/iir_sos16_ED97_3_ultrascale2_250/implementedSystem_power_synth.rpt
+| Design           : implementedSystem_toplevel
+| Device           : xcvu13p-fhga2104-2-e
+| Design State     : routed
+| Grade            : extended
+| Process          : typical
+| Characterization : Production
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 3.372        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.418        |
+| Device Static (W)        | 2.954        |
+| Effective TJA (C/W)      | 0.5          |
+| Max Ambient (C)          | 98.2         |
+| Junction Temperature (C) | 26.8         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.064 |        3 |       --- |             --- |
+| CLB Logic               |     0.147 |    14836 |       --- |             --- |
+|   LUT as Logic          |     0.107 |     3767 |   1728000 |            0.22 |
+|   LUT as Shift Register |     0.023 |     1915 |    791040 |            0.24 |
+|   Register              |     0.016 |     7107 |   3456000 |            0.21 |
+|   CARRY8                |    <0.001 |       63 |    216000 |            0.03 |
+|   Others                |     0.000 |      237 |       --- |             --- |
+|   F7/F8 Muxes           |     0.000 |      744 |   1728000 |            0.04 |
+| Signals                 |     0.175 |     9422 |       --- |             --- |
+| DSPs                    |     0.010 |        6 |     12288 |            0.05 |
+| I/O                     |     0.023 |       66 |       832 |            7.93 |
+| Static Power            |     2.954 |          |           |                 |
+| Total                   |     3.372 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++------------+-------------+-----------+-------------+------------+
+| Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++------------+-------------+-----------+-------------+------------+
+| Vccint     |       0.850 |     1.612 |       0.465 |      1.148 |
+| Vccint_io  |       0.850 |     0.143 |       0.001 |      0.142 |
+| Vccbram    |       0.850 |     0.020 |       0.000 |      0.020 |
+| Vccaux     |       1.800 |     0.886 |       0.000 |      0.886 |
+| Vccaux_io  |       1.800 |     0.111 |       0.007 |      0.104 |
+| Vcco33     |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18     |       1.800 |     0.005 |       0.005 |      0.000 |
+| Vcco15     |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135    |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12     |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vcco10     |       1.000 |     0.000 |       0.000 |      0.000 |
+| Vccadc     |       1.800 |     0.032 |       0.000 |      0.032 |
+| MGTYAVcc   |       0.900 |     0.000 |       0.000 |      0.000 |
+| MGTYAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTYVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
++------------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 0.5                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 0.7                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+| clk   | clk    |             4.0 |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++---------------------------------+-----------+
+| Name                            | Power (W) |
++---------------------------------+-----------+
+| implementedSystem_toplevel      |     0.418 |
+|   Delay104No_instance           |    <0.001 |
+|   Delay106No_instance           |     0.001 |
+|   Delay10No_instance            |     0.002 |
+|   Delay113No_instance           |    <0.001 |
+|   Delay116No_instance           |     0.001 |
+|   Delay117No_instance           |    <0.001 |
+|   Delay11No5_instance           |    <0.001 |
+|   Delay121No_instance           |     0.001 |
+|   Delay123No_instance           |     0.001 |
+|   Delay128No_instance           |    <0.001 |
+|   Delay129No_instance           |     0.001 |
+|   Delay134No_instance           |     0.001 |
+|   Delay141No_instance           |    <0.001 |
+|   Delay144No_instance           |    <0.001 |
+|   Delay145No_instance           |     0.003 |
+|   Delay14No2_instance           |     0.001 |
+|   Delay16No3_instance           |    <0.001 |
+|   Delay16No4_instance           |    <0.001 |
+|   Delay1No10_instance           |     0.005 |
+|   Delay1No11_instance           |     0.007 |
+|   Delay1No12_instance           |     0.003 |
+|   Delay1No1_instance            |     0.002 |
+|   Delay1No2_instance            |    <0.001 |
+|   Delay1No3_instance            |     0.002 |
+|   Delay1No4_instance            |    <0.001 |
+|   Delay1No5_instance            |     0.002 |
+|   Delay1No68_instance           |    <0.001 |
+|   Delay1No69_instance           |    <0.001 |
+|   Delay1No6_instance            |     0.005 |
+|   Delay1No7_instance            |     0.007 |
+|   Delay1No8_instance            |     0.005 |
+|   Delay1No9_instance            |     0.008 |
+|   Delay1No_instance             |    <0.001 |
+|   Delay20No1_instance           |    <0.001 |
+|   Delay27No2_instance           |    <0.001 |
+|   Delay33No1_instance           |     0.001 |
+|   Delay33No2_instance           |    <0.001 |
+|   Delay33No_instance            |     0.004 |
+|   Delay34No_instance            |     0.004 |
+|   Delay36No_instance            |    <0.001 |
+|   Delay39No_instance            |    <0.001 |
+|   Delay43No1_instance           |    <0.001 |
+|   Delay46No_instance            |    <0.001 |
+|   Delay4No16_instance           |    <0.001 |
+|   Delay51No_instance            |    <0.001 |
+|   Delay53No_instance            |    <0.001 |
+|   Delay56No_instance            |    <0.001 |
+|   Delay58No_instance            |    <0.001 |
+|   Delay59No_instance            |     0.001 |
+|   Delay5No11_instance           |    <0.001 |
+|   Delay63No_instance            |    <0.001 |
+|   Delay64No_instance            |    <0.001 |
+|   Delay66No_instance            |    <0.001 |
+|   Delay6No9_instance            |    <0.001 |
+|   Delay74No_instance            |    <0.001 |
+|   Delay76No_instance            |    <0.001 |
+|   Delay81No_instance            |    <0.001 |
+|   Delay85No_instance            |     0.001 |
+|   Delay86No_instance            |    <0.001 |
+|   Delay92No1_instance           |    <0.001 |
+|   Delay92No_instance            |    <0.001 |
+|   Delay93No_instance            |    <0.001 |
+|   Delay94No_instance            |    <0.001 |
+|   Delay98No_instance            |     0.001 |
+|   In2_IBUF[0]_inst              |    <0.001 |
+|   In2_IBUF[10]_inst             |    <0.001 |
+|   In2_IBUF[11]_inst             |    <0.001 |
+|   In2_IBUF[12]_inst             |    <0.001 |
+|   In2_IBUF[13]_inst             |    <0.001 |
+|   In2_IBUF[14]_inst             |    <0.001 |
+|   In2_IBUF[15]_inst             |    <0.001 |
+|   In2_IBUF[16]_inst             |    <0.001 |
+|   In2_IBUF[17]_inst             |    <0.001 |
+|   In2_IBUF[18]_inst             |    <0.001 |
+|   In2_IBUF[19]_inst             |    <0.001 |
+|   In2_IBUF[1]_inst              |    <0.001 |
+|   In2_IBUF[20]_inst             |    <0.001 |
+|   In2_IBUF[21]_inst             |    <0.001 |
+|   In2_IBUF[22]_inst             |    <0.001 |
+|   In2_IBUF[23]_inst             |    <0.001 |
+|   In2_IBUF[24]_inst             |    <0.001 |
+|   In2_IBUF[25]_inst             |    <0.001 |
+|   In2_IBUF[26]_inst             |    <0.001 |
+|   In2_IBUF[27]_inst             |    <0.001 |
+|   In2_IBUF[28]_inst             |    <0.001 |
+|   In2_IBUF[29]_inst             |    <0.001 |
+|   In2_IBUF[2]_inst              |    <0.001 |
+|   In2_IBUF[30]_inst             |    <0.001 |
+|   In2_IBUF[31]_inst             |    <0.001 |
+|   In2_IBUF[3]_inst              |    <0.001 |
+|   In2_IBUF[4]_inst              |    <0.001 |
+|   In2_IBUF[5]_inst              |    <0.001 |
+|   In2_IBUF[6]_inst              |    <0.001 |
+|   In2_IBUF[7]_inst              |    <0.001 |
+|   In2_IBUF[8]_inst              |    <0.001 |
+|   In2_IBUF[9]_inst              |    <0.001 |
+|   MUX_Product14_impl_0_instance |     0.003 |
+|   MUX_Product14_impl_1_instance |     0.008 |
+|   MUX_Product1_impl_0_instance  |     0.002 |
+|   MUX_Product1_impl_1_instance  |     0.009 |
+|   MUX_Product_impl_0_instance   |     0.003 |
+|   MUX_Product_impl_1_instance   |     0.009 |
+|   MUX_Sum13_impl_0_instance     |     0.009 |
+|   MUX_Sum13_impl_1_instance     |     0.009 |
+|   MUX_Sum1_impl_0_instance      |     0.007 |
+|   MUX_Sum1_impl_1_instance      |     0.009 |
+|   MUX_Sum29_impl_0_instance     |     0.007 |
+|   MUX_Sum29_impl_1_instance     |     0.009 |
+|   ModCount221_instance          |     0.041 |
+|   Product14_impl_instance       |     0.007 |
+|     SignificandMultiplication   |     0.005 |
+|   Product1_impl_instance        |     0.007 |
+|     SignificandMultiplication   |     0.005 |
+|   Product_impl_instance         |     0.007 |
+|     SignificandMultiplication   |     0.004 |
+|   SharedReg10_instance          |    <0.001 |
+|   SharedReg11_instance          |     0.002 |
+|   SharedReg12_instance          |    <0.001 |
+|   SharedReg13_instance          |     0.001 |
+|   SharedReg14_instance          |     0.003 |
+|   SharedReg15_instance          |     0.003 |
+|   SharedReg16_instance          |     0.001 |
+|   SharedReg17_instance          |     0.001 |
+|   SharedReg18_instance          |     0.002 |
+|   SharedReg19_instance          |     0.001 |
+|   SharedReg1_instance           |    <0.001 |
+|   SharedReg20_instance          |     0.004 |
+|   SharedReg21_instance          |     0.001 |
+|   SharedReg22_instance          |     0.001 |
+|   SharedReg23_instance          |     0.001 |
+|   SharedReg24_instance          |     0.004 |
+|   SharedReg25_instance          |     0.002 |
+|   SharedReg26_instance          |     0.002 |
+|   SharedReg27_instance          |     0.001 |
+|   SharedReg28_instance          |     0.002 |
+|   SharedReg29_instance          |    <0.001 |
+|   SharedReg2_instance           |    <0.001 |
+|   SharedReg30_instance          |     0.001 |
+|   SharedReg31_instance          |     0.002 |
+|   SharedReg32_instance          |     0.002 |
+|   SharedReg33_instance          |     0.002 |
+|   SharedReg34_instance          |     0.004 |
+|   SharedReg35_instance          |     0.002 |
+|   SharedReg36_instance          |    <0.001 |
+|   SharedReg37_instance          |     0.002 |
+|   SharedReg38_instance          |    <0.001 |
+|   SharedReg39_instance          |     0.001 |
+|   SharedReg3_instance           |     0.001 |
+|   SharedReg40_instance          |     0.003 |
+|   SharedReg41_instance          |     0.002 |
+|   SharedReg42_instance          |     0.001 |
+|   SharedReg43_instance          |     0.001 |
+|   SharedReg44_instance          |     0.001 |
+|   SharedReg45_instance          |     0.001 |
+|   SharedReg46_instance          |     0.001 |
+|   SharedReg47_instance          |     0.002 |
+|   SharedReg48_instance          |    <0.001 |
+|   SharedReg49_instance          |     0.001 |
+|   SharedReg4_instance           |     0.002 |
+|   SharedReg50_instance          |     0.002 |
+|   SharedReg51_instance          |     0.003 |
+|   SharedReg52_instance          |     0.004 |
+|   SharedReg53_instance          |    <0.001 |
+|   SharedReg54_instance          |     0.002 |
+|   SharedReg55_instance          |     0.004 |
+|   SharedReg56_instance          |     0.002 |
+|   SharedReg57_instance          |     0.003 |
+|   SharedReg59_instance          |    <0.001 |
+|   SharedReg5_instance           |     0.001 |
+|   SharedReg60_instance          |     0.001 |
+|   SharedReg61_instance          |     0.001 |
+|   SharedReg62_instance          |     0.001 |
+|   SharedReg63_instance          |    <0.001 |
+|   SharedReg64_instance          |     0.001 |
+|   SharedReg65_instance          |     0.001 |
+|   SharedReg66_instance          |    <0.001 |
+|   SharedReg67_instance          |    <0.001 |
+|   SharedReg68_instance          |    <0.001 |
+|   SharedReg69_instance          |     0.003 |
+|   SharedReg6_instance           |     0.002 |
+|   SharedReg70_instance          |     0.001 |
+|   SharedReg71_instance          |     0.002 |
+|   SharedReg72_instance          |    <0.001 |
+|   SharedReg73_instance          |     0.002 |
+|   SharedReg74_instance          |    <0.001 |
+|   SharedReg75_instance          |     0.001 |
+|   SharedReg76_instance          |    <0.001 |
+|   SharedReg77_instance          |    <0.001 |
+|   SharedReg78_instance          |     0.001 |
+|   SharedReg7_instance           |     0.004 |
+|   SharedReg8_instance           |     0.001 |
+|   SharedReg9_instance           |     0.004 |
+|   SharedReg_instance            |     0.002 |
+|   Sum13_impl_instance           |     0.008 |
+|     FPAddSubOp_instance         |     0.008 |
+|       LZC_component             |     0.004 |
+|       fracAdder                 |     0.001 |
+|   Sum1_impl_instance            |     0.008 |
+|     FPAddSubOp_instance         |     0.008 |
+|       LZC_component             |     0.004 |
+|       fracAdder                 |     0.001 |
+|   Sum29_impl_instance           |     0.008 |
+|     FPAddSubOp_instance         |     0.008 |
+|       LZC_component             |     0.004 |
+|       fracAdder                 |     0.001 |
+|   clk_IBUF_inst                 |    <0.001 |
+|   rst_IBUF_inst                 |    <0.001 |
++---------------------------------+-----------+
+
+

@@ -1,0 +1,111 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date              : Fri Aug 27 06:22:12 2021
+| Host              : animal.digi.e-technik.uni-kassel.de running 64-bit AlmaLinux release 8.3 (Purple Manul)
+| Command           : report_timing -file /home/nfiege/Repositories/origami/vhdl/ratII/synth/fir_SAM/UniformILPNew/fir_SAM_UniformILPNew_140_ultrascale2_250/implementedSystem_timing_synth.rpt
+| Design            : implementedSystem_toplevel
+| Device            : xcvu13p-fhga2104
+| Speed File        : -2  PRODUCTION 1.19 03-17-2018
+| Temperature Grade : E
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.417ns  (required time - arrival time)
+  Source:                 Delay1No34_instance/Y_reg[26]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            Sum10_9_impl_instance/FPAddSubOp_instance/shiftedFracY_d1_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        3.405ns  (logic 1.023ns (30.044%)  route 2.382ns (69.956%))
+  Logic Levels:           9  (CARRY8=2 LUT3=1 LUT4=1 LUT5=3 LUT6=2)
+  Clock Path Skew:        -0.168ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.529ns = ( 6.529 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.083ns
+    Clock Pessimism Removal (CPR):    0.386ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      2.048ns (routing 0.937ns, distribution 1.111ns)
+  Clock Net Delay (Destination): 1.788ns (routing 0.853ns, distribution 0.935ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    BC10                                              0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    BC10                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.659     0.659 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.659    clk_IBUF_inst/OUT
+    BC10                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.659 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.348     1.007    clk_IBUF
+    BUFGCE_X0Y146        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     1.035 r  clk_IBUF_BUFG_inst/O
+    X5Y5 (CLOCK_ROOT)    net (fo=67156, routed)       2.048     3.083    Delay1No34_instance/clk_IBUF_BUFG
+    SLICE_X162Y427       FDCE                                         r  Delay1No34_instance/Y_reg[26]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X162Y427       FDCE (Prop_DFF_SLICEM_C_Q)
+                                                      0.078     3.161 r  Delay1No34_instance/Y_reg[26]/Q
+                         net (fo=9, routed)           0.729     3.890    Delay1No34_instance/Q[26]
+    SLICE_X160Y382       LUT4 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.097     3.987 r  Delay1No34_instance/geqOp_carry__0_i_11__3/O
+                         net (fo=1, routed)           0.011     3.998    Sum10_9_impl_instance/FPAddSubOp_instance/Y_reg[30]_0[5]
+    SLICE_X160Y382       CARRY8 (Prop_CARRY8_SLICEL_S[5]_CO[7])
+                                                      0.155     4.153 r  Sum10_9_impl_instance/FPAddSubOp_instance/geqOp_carry__0/CO[7]
+                         net (fo=1, routed)           0.026     4.179    Sum10_9_impl_instance/FPAddSubOp_instance/geqOp_carry__0_n_0
+    SLICE_X160Y383       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[0])
+                                                      0.052     4.231 r  Sum10_9_impl_instance/FPAddSubOp_instance/geqOp_carry__1/CO[0]
+                         net (fo=72, routed)          0.400     4.631    Delay1No35_instance/CO[0]
+    SLICE_X155Y386       LUT5 (Prop_H5LUT_SLICEL_I4_O)
+                                                      0.065     4.696 r  Delay1No35_instance/shiftedFracY_d1[12]_i_4__3/O
+                         net (fo=3, routed)           0.172     4.868    Delay1No34_instance/Y_reg[23]_0[0]
+    SLICE_X155Y385       LUT6 (Prop_H6LUT_SLICEL_I2_O)
+                                                      0.090     4.958 r  Delay1No34_instance/shiftedFracY_d1[32]_i_9__3/O
+                         net (fo=3, routed)           0.105     5.063    Delay1No34_instance/shiftedFracY_d1[32]_i_9__3_n_0
+    SLICE_X155Y386       LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.123     5.186 r  Delay1No34_instance/shiftedFracY_d1[12]_i_3__3/O
+                         net (fo=33, routed)          0.372     5.558    Delay1No35_instance/shiftVal__5[0]
+    SLICE_X161Y380       LUT6 (Prop_C6LUT_SLICEM_I2_O)
+                                                      0.123     5.681 r  Delay1No35_instance/shiftedFracY_d1[34]_i_2__3/O
+                         net (fo=4, routed)           0.197     5.878    Delay1No35_instance/level2__1[11]
+    SLICE_X161Y386       LUT5 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.150     6.028 r  Delay1No35_instance/shiftedFracY_d1[6]_i_1__3/O
+                         net (fo=2, routed)           0.317     6.345    Delay1No35_instance/level4__1[2]
+    SLICE_X164Y381       LUT3 (Prop_A6LUT_SLICEM_I2_O)
+                                                      0.090     6.435 r  Delay1No35_instance/shiftedFracY_d1[22]_i_1__3/O
+                         net (fo=1, routed)           0.053     6.488    Sum10_9_impl_instance/FPAddSubOp_instance/shiftedFracY[11]
+    SLICE_X164Y381       FDRE                                         r  Sum10_9_impl_instance/FPAddSubOp_instance/shiftedFracY_d1_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+    BC10                                              0.000     4.000 r  clk (IN)
+                         net (fo=0)                   0.000     4.000    clk_IBUF_inst/I
+    BC10                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.408     4.408 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     4.408    clk_IBUF_inst/OUT
+    BC10                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     4.408 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.309     4.717    clk_IBUF
+    BUFGCE_X0Y146        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.741 r  clk_IBUF_BUFG_inst/O
+    X5Y5 (CLOCK_ROOT)    net (fo=67156, routed)       1.788     6.529    Sum10_9_impl_instance/FPAddSubOp_instance/clk
+    SLICE_X164Y381       FDRE                                         r  Sum10_9_impl_instance/FPAddSubOp_instance/shiftedFracY_d1_reg[22]/C
+                         clock pessimism              0.386     6.915    
+                         clock uncertainty           -0.035     6.880    
+    SLICE_X164Y381       FDRE (Setup_AFF_SLICEM_C_D)
+                                                      0.025     6.905    Sum10_9_impl_instance/FPAddSubOp_instance/shiftedFracY_d1_reg[22]
+  -------------------------------------------------------------------
+                         required time                          6.905    
+                         arrival time                          -6.488    
+  -------------------------------------------------------------------
+                         slack                                  0.417    
+
+
+
+

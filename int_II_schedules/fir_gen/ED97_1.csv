@@ -1,0 +1,19 @@
+# II 5
+# graph /home/nfiege/Repositories/hatschet/benchmarks/origami//fir_gen.graphml
+# resourceModel /home/nfiege/Repositories/experiments/trunk/rmIntII/origami//fir_gen/RM1.xml
+# vertex;cycle;fu
+In1;0;0
+In2;0;0
+In3;0;0
+In4;0;0
+In5;0;0
+Add;6;0
+Add1;7;0
+Add2;8;0
+CMult;8;0
+Constant;0;0
+Mult;5;0
+Mult1;2;0
+Mult2;1;0
+Mult3;4;0
+Out1;12;0

@@ -1,0 +1,117 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date              : Thu Aug 26 14:45:05 2021
+| Host              : animal.digi.e-technik.uni-kassel.de running 64-bit AlmaLinux release 8.3 (Purple Manul)
+| Command           : report_timing -file /home/nfiege/Repositories/origami/vhdl/ratII/synth/iir_sos16/UniformILPNew/iir_sos16_UniformILPNew_84_ultrascale2_250/implementedSystem_timing_synth.rpt
+| Design            : implementedSystem_toplevel
+| Device            : xcvu13p-fhga2104
+| Speed File        : -2  PRODUCTION 1.19 03-17-2018
+| Temperature Grade : E
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.501ns  (required time - arrival time)
+  Source:                 Sum11_1_impl_instance/FPAddSubOp_instance/shiftedFracY_d1_reg[15]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/level4_d1_reg[1]/R
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        3.290ns  (logic 0.904ns (27.477%)  route 2.386ns (72.523%))
+  Logic Levels:           11  (CARRY8=4 LUT3=1 LUT4=2 LUT5=2 LUT6=2)
+  Clock Path Skew:        -0.099ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.705ns = ( 5.705 - 4.000 ) 
+    Source Clock Delay      (SCD):    2.163ns
+    Clock Pessimism Removal (CPR):    0.359ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.212ns (routing 0.170ns, distribution 1.042ns)
+  Clock Net Delay (Destination): 1.045ns (routing 0.155ns, distribution 0.890ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    AP13                                              0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    AP13                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.600     0.600 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.600    clk_IBUF_inst/OUT
+    AP13                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.600 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.323     0.923    clk_IBUF
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.951 r  clk_IBUF_BUFG_inst/O
+    X4Y7 (CLOCK_ROOT)    net (fo=12074, routed)       1.212     2.163    Sum11_1_impl_instance/FPAddSubOp_instance/clk
+    SLICE_X128Y435       FDRE                                         r  Sum11_1_impl_instance/FPAddSubOp_instance/shiftedFracY_d1_reg[15]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X128Y435       FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.078     2.241 r  Sum11_1_impl_instance/FPAddSubOp_instance/shiftedFracY_d1_reg[15]/Q
+                         net (fo=1, routed)           0.424     2.665    Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/shiftedFracY_d1_reg[15]
+    SLICE_X123Y436       LUT4 (Prop_E6LUT_SLICEL_I2_O)
+                                                      0.035     2.700 r  Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/level4_d1[0]_i_4__1/O
+                         net (fo=1, routed)           0.191     2.891    Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/level4_d1[0]_i_4__1_n_0
+    SLICE_X126Y435       LUT6 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.100     2.991 r  Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/level4_d1[0]_i_2__1/O
+                         net (fo=1, routed)           0.088     3.079    Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/level4_d1[0]_i_2__1_n_0
+    SLICE_X126Y436       LUT6 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.100     3.179 r  Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/level4_d1[0]_i_1__1/O
+                         net (fo=4, routed)           0.331     3.510    Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/level4_d1_reg[0]_0
+    SLICE_X127Y433       LUT3 (Prop_A6LUT_SLICEL_I1_O)
+                                                      0.050     3.560 r  Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/plusOp_carry_i_9__1/O
+                         net (fo=1, routed)           0.009     3.569    Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/S[0]
+    SLICE_X127Y433       CARRY8 (Prop_CARRY8_SLICEL_S[0]_CO[7])
+                                                      0.190     3.759 r  Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/plusOp_carry/CO[7]
+                         net (fo=1, routed)           0.026     3.785    Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/plusOp_carry_n_0
+    SLICE_X127Y434       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     3.800 r  Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/plusOp_carry__0/CO[7]
+                         net (fo=1, routed)           0.026     3.826    Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/plusOp_carry__0_n_0
+    SLICE_X127Y435       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     3.841 r  Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/plusOp_carry__1/CO[7]
+                         net (fo=1, routed)           0.026     3.867    Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/plusOp_carry__1_n_0
+    SLICE_X127Y436       CARRY8 (Prop_CARRY8_SLICEL_CI_O[1])
+                                                      0.076     3.943 f  Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/plusOp_carry__2/O[1]
+                         net (fo=6, routed)           0.403     4.346    Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/level5[26]
+    SLICE_X122Y437       LUT4 (Prop_D5LUT_SLICEM_I3_O)
+                                                      0.158     4.504 f  Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/level4_d1[19]_i_5__1/O
+                         net (fo=1, routed)           0.164     4.668    Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/level4_d1[19]_i_5__1_n_0
+    SLICE_X122Y436       LUT5 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.037     4.705 f  Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/level4_d1[19]_i_2__1/O
+                         net (fo=6, routed)           0.221     4.926    Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/level4_d1[19]_i_2__1_n_0
+    SLICE_X123Y435       LUT5 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.050     4.976 r  Sum11_1_impl_instance/FPAddSubOp_instance/fracAdder/level4_d1[11]_i_1__1/O
+                         net (fo=13, routed)          0.477     5.453    Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/newX_d1_reg[21]
+    SLICE_X127Y433       FDRE                                         r  Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/level4_d1_reg[1]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+    AP13                                              0.000     4.000 r  clk (IN)
+                         net (fo=0)                   0.000     4.000    clk_IBUF_inst/I
+    AP13                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.349     4.349 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     4.349    clk_IBUF_inst/OUT
+    AP13                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     4.349 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.287     4.636    clk_IBUF
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.660 r  clk_IBUF_BUFG_inst/O
+    X4Y7 (CLOCK_ROOT)    net (fo=12074, routed)       1.045     5.705    Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/clk
+    SLICE_X127Y433       FDRE                                         r  Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/level4_d1_reg[1]/C
+                         clock pessimism              0.359     6.063    
+                         clock uncertainty           -0.035     6.028    
+    SLICE_X127Y433       FDRE (Setup_AFF_SLICEL_C_R)
+                                                     -0.074     5.954    Sum11_1_impl_instance/FPAddSubOp_instance/LZC_component/level4_d1_reg[1]
+  -------------------------------------------------------------------
+                         required time                          5.954    
+                         arrival time                          -5.453    
+  -------------------------------------------------------------------
+                         slack                                  0.501    
+
+
+
+

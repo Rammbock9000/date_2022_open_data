@@ -1,0 +1,66 @@
+# II 1.25
+# samples 4
+# modulo 5
+# graph /home/groups/fb16-digi/opt/hatschet/benchmarks/origami//fir_gen.graphml
+# resourceModel /home/groups/fb16-digi/projects/ratII/rm/origami//fir_gen/RM7.xml
+# vertex;sample;cycle;fu
+In1;0;0;0
+In2;0;3;0
+In3;0;0;0
+In4;0;2;0
+In5;0;3;0
+Add;0;5;0
+Add1;0;7;0
+Add2;0;13;0
+CMult;0;19;0
+Constant;0;3;0
+Mult;0;5;0
+Mult1;0;1;0
+Mult2;0;3;0
+Mult3;0;6;1
+Out1;0;23;0
+In1;1;3;0
+In2;1;2;0
+In3;1;3;0
+In4;1;3;0
+In5;1;2;0
+Add;1;9;0
+Add1;1;10;1
+Add2;1;12;1
+CMult;1;18;1
+Constant;1;2;0
+Mult;1;4;1
+Mult1;1;4;2
+Mult2;1;4;3
+Mult3;1;6;2
+Out1;1;22;0
+In1;2;1;0
+In2;2;1;0
+In3;2;2;0
+In4;2;1;0
+In5;2;1;0
+Add;2;8;1
+Add1;2;14;1
+Add2;2;15;2
+CMult;2;17;0
+Constant;2;1;0
+Mult;2;2;1
+Mult1;2;3;2
+Mult2;2;7;2
+Mult3;2;11;3
+Out1;2;21;0
+In1;3;2;0
+In2;3;0;0
+In3;3;1;0
+In4;3;0;0
+In5;3;0;0
+Add;3;7;2
+Add1;3;13;2
+Add2;3;19;2
+CMult;3;20;1
+Constant;3;0;0
+Mult;3;5;2
+Mult1;3;3;3
+Mult2;3;7;3
+Mult3;3;15;3
+Out1;3;24;0

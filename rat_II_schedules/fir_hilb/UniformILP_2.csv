@@ -1,0 +1,34 @@
+# II 1.5
+# samples 2
+# modulo 3
+# graph /home/groups/fb16-digi/opt/hatschet/benchmarks/origami//fir_hilb.graphml
+# resourceModel /home/groups/fb16-digi/projects/ratII/rm/origami//fir_hilb/RM2.xml
+# vertex;sample;cycle;fu
+Subtract;0;2;0
+Constant2;0;0;0
+Product;0;11;0
+Product1;0;6;0
+In_x;0;0;0
+Constant;0;0;0
+Constant1;0;0;0
+Product2;0;6;1
+Subtract1;0;0;0
+Subtract2;0;1;0
+Out_x;0;0;0
+Out_y;0;20;0
+Add2Tree0;0;10;0
+Add2Tree1;0;15;0
+Subtract;1;4;1
+Constant2;1;2;0
+Product;1;13;0
+Product1;1;8;1
+In_x;1;2;0
+Constant;1;2;0
+Constant1;1;2;0
+Product2;1;8;2
+Subtract1;1;2;1
+Subtract2;1;3;1
+Out_x;1;2;0
+Out_y;1;22;0
+Add2Tree0;1;12;1
+Add2Tree1;1;17;0

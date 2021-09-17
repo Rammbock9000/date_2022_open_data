@@ -1,0 +1,105 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date              : Fri Apr 24 12:39:34 2020
+| Host              : animal.digi.e-technik.uni-kassel.de running 64-bit CentOS Linux release 7.7.1908 (Core)
+| Command           : report_timing -file /home/nfiege/Repositories/origami/vhdl/ratII/synth/iir_sos16/NonUniformILP/iir_sos16_NonUniformILP_112_ultrascale2_250/implementedSystem_timing_synth.rpt
+| Design            : implementedSystem_toplevel
+| Device            : xcvu13p-fhga2104
+| Speed File        : -2  PRODUCTION 1.19 03-17-2018
+| Temperature Grade : E
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.437ns  (required time - arrival time)
+  Source:                 Delay1No5_instance/Y_reg[21]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            Product1_1_impl_instance/SignificandMultiplication/RR__0/DSP_OUTPUT_INST/ALU_OUT[0]
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        3.393ns  (logic 2.152ns (63.425%)  route 1.241ns (36.575%))
+  Logic Levels:           7  (DSP_A_B_DATA=1 DSP_ALU=2 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=1 DSP_PREADD_DATA=1)
+  Clock Path Skew:        -0.149ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.899ns = ( 5.899 - 4.000 ) 
+    Source Clock Delay      (SCD):    2.421ns
+    Clock Pessimism Removal (CPR):    0.373ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.470ns (routing 0.338ns, distribution 1.132ns)
+  Clock Net Delay (Destination): 1.239ns (routing 0.309ns, distribution 0.930ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    AP13                                              0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    AP13                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.600     0.600 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.600    clk_IBUF_inst/OUT
+    AP13                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.600 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.323     0.923    clk_IBUF
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.951 r  clk_IBUF_BUFG_inst/O
+    X4Y7 (CLOCK_ROOT)    net (fo=19603, routed)       1.470     2.421    Delay1No5_instance/clk_IBUF_BUFG
+    SLICE_X155Y457       FDCE                                         r  Delay1No5_instance/Y_reg[21]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X155Y457       FDCE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     2.500 f  Delay1No5_instance/Y_reg[21]/Q
+                         net (fo=1, routed)           1.227     3.727    Product1_1_impl_instance/SignificandMultiplication/RR/A[21]
+    DSP48E2_X17Y170      DSP_A_B_DATA (Prop_DSP_A_B_DATA_DSP48E2_A[21]_A2_DATA[21])
+                                                      0.192     3.919 r  Product1_1_impl_instance/SignificandMultiplication/RR/DSP_A_B_DATA_INST/A2_DATA[21]
+                         net (fo=1, routed)           0.000     3.919    Product1_1_impl_instance/SignificandMultiplication/RR/DSP_A_B_DATA.A2_DATA<21>
+    DSP48E2_X17Y170      DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_DSP48E2_A2_DATA[21]_A2A1[21])
+                                                      0.076     3.995 r  Product1_1_impl_instance/SignificandMultiplication/RR/DSP_PREADD_DATA_INST/A2A1[21]
+                         net (fo=1, routed)           0.000     3.995    Product1_1_impl_instance/SignificandMultiplication/RR/DSP_PREADD_DATA.A2A1<21>
+    DSP48E2_X17Y170      DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_DSP48E2_A2A1[21]_U[40])
+                                                      0.505     4.500 f  Product1_1_impl_instance/SignificandMultiplication/RR/DSP_MULTIPLIER_INST/U[40]
+                         net (fo=1, routed)           0.000     4.500    Product1_1_impl_instance/SignificandMultiplication/RR/DSP_MULTIPLIER.U<40>
+    DSP48E2_X17Y170      DSP_M_DATA (Prop_DSP_M_DATA_DSP48E2_U[40]_U_DATA[40])
+                                                      0.047     4.547 r  Product1_1_impl_instance/SignificandMultiplication/RR/DSP_M_DATA_INST/U_DATA[40]
+                         net (fo=1, routed)           0.000     4.547    Product1_1_impl_instance/SignificandMultiplication/RR/DSP_M_DATA.U_DATA<40>
+    DSP48E2_X17Y170      DSP_ALU (Prop_DSP_ALU_DSP48E2_U_DATA[40]_ALU_OUT[47])
+                                                      0.585     5.132 f  Product1_1_impl_instance/SignificandMultiplication/RR/DSP_ALU_INST/ALU_OUT[47]
+                         net (fo=1, routed)           0.000     5.132    Product1_1_impl_instance/SignificandMultiplication/RR/DSP_ALU.ALU_OUT<47>
+    DSP48E2_X17Y170      DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[47]_PCOUT[47])
+                                                      0.122     5.254 r  Product1_1_impl_instance/SignificandMultiplication/RR/DSP_OUTPUT_INST/PCOUT[47]
+                         net (fo=1, routed)           0.014     5.268    Product1_1_impl_instance/SignificandMultiplication/RR__0/PCIN[47]
+    DSP48E2_X17Y171      DSP_ALU (Prop_DSP_ALU_DSP48E2_PCIN[47]_ALU_OUT[0])
+                                                      0.546     5.814 r  Product1_1_impl_instance/SignificandMultiplication/RR__0/DSP_ALU_INST/ALU_OUT[0]
+                         net (fo=1, routed)           0.000     5.814    Product1_1_impl_instance/SignificandMultiplication/RR__0/DSP_ALU.ALU_OUT<0>
+    DSP48E2_X17Y171      DSP_OUTPUT                                   r  Product1_1_impl_instance/SignificandMultiplication/RR__0/DSP_OUTPUT_INST/ALU_OUT[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+    AP13                                              0.000     4.000 r  clk (IN)
+                         net (fo=0)                   0.000     4.000    clk_IBUF_inst/I
+    AP13                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.349     4.349 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     4.349    clk_IBUF_inst/OUT
+    AP13                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     4.349 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.287     4.636    clk_IBUF
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.660 r  clk_IBUF_BUFG_inst/O
+    X4Y7 (CLOCK_ROOT)    net (fo=19603, routed)       1.239     5.899    Product1_1_impl_instance/SignificandMultiplication/RR__0/CLK
+    DSP48E2_X17Y171      DSP_OUTPUT                                   r  Product1_1_impl_instance/SignificandMultiplication/RR__0/DSP_OUTPUT_INST/CLK
+                         clock pessimism              0.373     6.271    
+                         clock uncertainty           -0.035     6.236    
+    DSP48E2_X17Y171      DSP_OUTPUT (Setup_DSP_OUTPUT_DSP48E2_CLK_ALU_OUT[0])
+                                                      0.015     6.251    Product1_1_impl_instance/SignificandMultiplication/RR__0/DSP_OUTPUT_INST
+  -------------------------------------------------------------------
+                         required time                          6.251    
+                         arrival time                          -5.814    
+  -------------------------------------------------------------------
+                         slack                                  0.437    
+
+
+
+

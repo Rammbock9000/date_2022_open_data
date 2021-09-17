@@ -1,0 +1,57 @@
+# II 1.33333
+# samples 3
+# modulo 4
+# graph /home/groups/fb16-digi/opt/hatschet/benchmarks/origami//fir_srg.graphml
+# resourceModel /home/groups/fb16-digi/projects/ratII/rm/origami//fir_srg/RM1.xml
+# vertex;sample;cycle;fu
+In_x;0;0;0
+Add;0;13;0
+CMult;0;3;0
+CMult1;0;1;0
+CMult2;0;4;0
+CMult3;0;2;0
+Const;0;0;0
+Const2;0;0;0
+Const3;0;0;0
+Constant2;0;0;0
+Subt;0;21;0
+Subt1;0;8;0
+Out_x(0);0;1;0
+Out_x(1);0;0;0
+Out_x(2);0;0;0
+Out_x(3);0;0;0
+Out_y;0;26;0
+In_x;1;1;0
+Add;1;14;0
+CMult;1;4;1
+CMult1;1;2;1
+CMult2;1;5;1
+CMult3;1;3;1
+Const;1;1;0
+Const2;1;1;0
+Const3;1;1;0
+Constant2;1;1;0
+Subt;1;22;0
+Subt1;1;9;1
+Out_x(0);1;2;0
+Out_x(1);1;1;0
+Out_x(2);1;1;0
+Out_x(3);1;1;0
+Out_y;1;27;0
+In_x;2;3;0
+Add;2;16;0
+CMult;2;6;2
+CMult1;2;4;2
+CMult2;2;7;2
+CMult3;2;5;2
+Const;2;3;0
+Const2;2;3;0
+Const3;2;3;0
+Constant2;2;3;0
+Subt;2;24;1
+Subt1;2;11;0
+Out_x(0);2;4;0
+Out_x(1);2;3;0
+Out_x(2);2;3;0
+Out_x(3);2;3;0
+Out_y;2;29;0

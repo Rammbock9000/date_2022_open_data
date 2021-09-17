@@ -1,0 +1,18 @@
+# II 3
+# graph /home/nfiege/Repositories/hatschet/benchmarks/origami//fir_hilb.graphml
+# resourceModel /home/nfiege/Repositories/experiments/trunk/rmIntII/origami//fir_hilb/RM1.xml
+# vertex;cycle;fu
+Constant2;0;0
+Product;7;0
+Product1;5;0
+In_x;0;0
+Constant;0;0
+Constant1;0;0
+Product2;6;0
+Subtract;2;0
+Subtract1;0;0
+Subtract2;1;0
+Out_x;0;0
+Out_y;20;0
+Add2Tree0;10;0
+Add2Tree1;15;0

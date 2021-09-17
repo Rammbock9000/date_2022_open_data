@@ -1,0 +1,129 @@
+\begin{figure}[tbp]
+\raggedleft
+\begin{tikzpicture}[
+every pin/.style = {pin distance=3mm, 
+                font=\bf, inner sep=1pt},
+  PN/.style args = {#1/#2}{% Pin Node
+    circle, draw=none, fill=none, 
+    minimum size=3pt, inner sep=0pt,
+    pin=#1:#2}      
+                    ] 
+\begin{axis}[
+grid=none,
+cycle list name=customlist,
+legend pos=north east,
+xlabel={Initiation Interval (log scale)},
+ylabel={Resource usage},
+xmode=log,
+%ymax = 4000,
+ymin = 0,
+%xmax = 15,
+grid=major,
+tick style={draw=none},
+xtick = {1,5/4,3/2,5/3,2,5/2,3,4,5},
+height=50mm,
+width=\linewidth,
+xticklabels = {1,$\frac{5}{4}$,$\frac{3}{2}$,$\frac{5}{3}$,2,$\frac{5}{2}$,3,4,5}
+]
+
+  \addplot[only marks, mark=square, mark options={scale=1.8, solid, draw=red}] table [x=II, y=RU,col sep = semicolon] {../synth_results/energy_plot/fir_gen_UniformILPNew_EPS_OPT_RU.csv};
+  \addlegendentry{\footnotesize prop. exact uniform}
+
+  \addplot[only marks, mark=triangle, mark options={scale=1.8, solid, draw=c3}] table [x=II, y=RU,col sep = semicolon] {../synth_results/energy_plot/fir_gen_NonUniformILP_EPS_OPT_RU.csv};
+  \addlegendentry{\footnotesize exact nonuniform [1]}
+  	
+  \addplot[only marks, mark=x, mark options={scale=1.5, solid, draw=blue}] table [x=II, y=RU,col sep = semicolon] {../synth_results/energy_plot/fir_gen_ED97_EPS_OPT_RU.csv};
+  \addlegendentry{\footnotesize integer-II [6]}
+  
+\end{axis}
+\end{tikzpicture}
+\caption{Resource usage \textsc{RU} for the \testname{gen} benchmark}
+ \label{fig:design_space_fir_gen}
+
+\vspace*{\floatsep}
+
+\begin{tikzpicture}[
+every pin/.style = {pin distance=3mm, 
+                font=\bf, inner sep=1pt},
+  PN/.style args = {#1/#2}{% Pin Node
+    circle, draw=none, fill=none, 
+    minimum size=3pt, inner sep=0pt,
+    pin=#1:#2}      
+                    ] 
+\begin{axis}[
+grid=none,
+cycle list name=customlist,
+legend pos=north east,
+xlabel={Initiation Interval (log scale)},
+ylabel={No. of DSPs used},
+xmode=log,
+%ymax = 4000,
+ymin = 0,
+%xmax = 15,
+grid=major,
+tick style={draw=none},
+xtick = {1,5/4,3/2,5/3,2,5/2,3,4,5},
+ytick = {0,2,4,6,8,10},
+height=50mm,
+width=\linewidth,
+xticklabels = {1,$\frac{5}{4}$,$\frac{3}{2}$,$\frac{5}{3}$,2,$\frac{5}{2}$,3,4,5},
+yticklabels = {0,2,4,6,8,10}
+]
+
+  \addplot[only marks, mark=square, mark options={scale=1.8, solid, draw=red}] table [x=II, y=DSPs,col sep = semicolon] {../synth_results/energy_plot/fir_gen_UniformILPNew_EPS_OPT_RU.csv};
+  \addlegendentry{\footnotesize prop. exact uniform}
+
+  \addplot[only marks, mark=triangle, mark options={scale=1.8, solid, draw=c3}] table [x=II, y=DSPs,col sep = semicolon] {../synth_results/energy_plot/fir_gen_NonUniformILP_EPS_OPT_RU.csv};
+  \addlegendentry{\footnotesize exact nonuniform [1]}
+  	
+  \addplot[only marks, mark=x, mark options={scale=1.5, solid, draw=blue}] table [x=II, y=DSPs,col sep = semicolon] {../synth_results/energy_plot/fir_gen_ED97_EPS_OPT_RU.csv};
+  \addlegendentry{\footnotesize integer-II [6]}
+  
+\end{axis}
+\end{tikzpicture}
+\caption{DSP usage for the \testname{gen} benchmark}
+ \label{fig:design_space_fir_gen_dsps}
+
+\vspace*{\floatsep}
+
+\raggedleft
+\begin{tikzpicture}[
+every pin/.style = {pin distance=3mm, 
+                font=\bf, inner sep=1pt},
+  PN/.style args = {#1/#2}{% Pin Node
+    circle, draw=none, fill=none, 
+    minimum size=3pt, inner sep=0pt,
+    pin=#1:#2}      
+                    ] 
+\begin{axis}[
+grid=none,
+cycle list name=customlist,
+legend pos=north west,
+xlabel={Initiation Interval (log scale)},
+ylabel={Energy per sample [nJ]},
+xmode=log,
+%ymax = 4000,
+ymin = 0,
+%xmax = 15,
+grid=major,
+tick style={draw=none},
+xtick = {1,5/4,3/2,5/3,2,5/2,3,4,5},
+height=50mm,
+width=\linewidth,
+xticklabels = {1,$\frac{5}{4}$,$\frac{3}{2}$,$\frac{5}{3}$,2,$\frac{5}{2}$,3,4,5}
+]
+
+  \addplot[only marks, mark=square, mark options={scale=1.8, solid, draw=red}] table [x=II, y=energyPerSample,col sep = semicolon] {../synth_results/energy_plot/fir_gen_UniformILPNew_EPS_OPT_RU.csv};
+  \addlegendentry{\footnotesize prop. exact uniform}
+
+  \addplot[only marks, mark=triangle, mark options={scale=1.8, solid, draw=c3}] table [x=II, y=energyPerSample,col sep = semicolon] {../synth_results/energy_plot/fir_gen_NonUniformILP_EPS_OPT_RU.csv};
+  \addlegendentry{\footnotesize exact nonuniform [1]}
+  	
+  \addplot[only marks,mark=x, mark options={scale=1.5, solid, draw=blue}] table [x=II, y=energyPerSample,col sep = semicolon] {../synth_results/energy_plot/fir_gen_ED97_EPS_OPT_RU.csv};
+  \addlegendentry{\footnotesize integer-II [6]}
+  
+\end{axis}
+\end{tikzpicture}
+\caption{Energy per sample $E_s$ for the \testname{gen} benchmark}
+ \label{fig:eps_fir_gen}
+\end{figure}

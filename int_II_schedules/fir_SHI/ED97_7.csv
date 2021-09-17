@@ -1,0 +1,33 @@
+# II 1
+# graph /home/nfiege/Repositories/hatschet/benchmarks/origami//fir_SHI.graphml
+# resourceModel /home/nfiege/Repositories/experiments/trunk/rmIntII/origami//fir_SHI/RM7.xml
+# vertex;cycle;fu
+Constant2;0;0
+Constant3;0;0
+X;0;0
+Constant;0;0
+Constant1;0;0
+Constant4;0;0
+Constant5;0;0
+Constant6;0;0
+Product;6;0
+Product1;5;1
+Product2;5;2
+Product3;5;3
+Product4;5;4
+Product5;5;5
+Product6;5;6
+Sum10;0;0
+Sum11;0;1
+Sum12;0;2
+Sum13;0;3
+Sum7;1;4
+Sum8;0;5
+Sum9;0;6
+Y;40;0
+Sum1Tree0;10;7
+Sum1Tree1;15;8
+Sum1Tree2;20;9
+Sum1Tree3;25;10
+Sum1Tree4;30;11
+Sum1Tree5;35;12

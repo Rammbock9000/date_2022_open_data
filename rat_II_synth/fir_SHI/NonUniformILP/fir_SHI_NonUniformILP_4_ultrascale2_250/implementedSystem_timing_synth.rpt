@@ -1,0 +1,94 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date              : Fri Apr 24 09:44:48 2020
+| Host              : animal.digi.e-technik.uni-kassel.de running 64-bit CentOS Linux release 7.7.1908 (Core)
+| Command           : report_timing -file /home/nfiege/Repositories/origami/vhdl/ratII/synth/fir_SHI/NonUniformILP/fir_SHI_NonUniformILP_4_ultrascale2_250/implementedSystem_timing_synth.rpt
+| Design            : implementedSystem_toplevel
+| Device            : xcvu13p-fhga2104
+| Speed File        : -2  PRODUCTION 1.19 03-17-2018
+| Temperature Grade : E
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.274ns  (required time - arrival time)
+  Source:                 ModCount131_instance/count_reg[2]_rep/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            Delay1No12_instance/Y_reg[21]/D
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        3.428ns  (logic 0.225ns (6.564%)  route 3.203ns (93.436%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        -0.115ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.649ns = ( 6.649 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.140ns
+    Clock Pessimism Removal (CPR):    0.376ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Inter-SLR Compensation: 0.173ns  ((DCD - CCD) * PF)
+    Destination Clock Delay (DCD):    2.649ns
+    Common Clock Delay      (CCD):    1.496ns
+    Prorating Factor         (PF):    0.150
+  Clock Net Delay (Source):      2.189ns (routing 0.921ns, distribution 1.268ns)
+  Clock Net Delay (Destination): 1.989ns (routing 0.836ns, distribution 1.153ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    AP13                                              0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    AP13                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.600     0.600 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.600    clk_IBUF_inst/OUT
+    AP13                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.600 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.323     0.923    clk_IBUF
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.951 r  clk_IBUF_BUFG_inst/O
+    X4Y5 (CLOCK_ROOT)    net (fo=6266, routed)        2.189     3.140    ModCount131_instance/clk_IBUF_BUFG
+    SLR Crossing[1->0]   
+    SLICE_X123Y237       FDCE                                         r  ModCount131_instance/count_reg[2]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X123Y237       FDCE (Prop_HFF2_SLICEL_C_Q)
+                                                      0.080     3.220 r  ModCount131_instance/count_reg[2]_rep/Q
+                         net (fo=68, routed)          3.131     6.351    MUX_Sum10_2_impl_0_instance/count_reg[2]_rep
+    SLR Crossing[0->1]   
+    SLICE_X133Y425       LUT6 (Prop_D6LUT_SLICEM_I4_O)
+                                                      0.145     6.496 r  MUX_Sum10_2_impl_0_instance/Y[21]_i_1/O
+                         net (fo=1, routed)           0.072     6.568    Delay1No12_instance/Y_reg[33]_1[21]
+    SLICE_X133Y425       FDCE                                         r  Delay1No12_instance/Y_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+    AP13                                              0.000     4.000 r  clk (IN)
+                         net (fo=0)                   0.000     4.000    clk_IBUF_inst/I
+    AP13                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.349     4.349 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     4.349    clk_IBUF_inst/OUT
+    AP13                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     4.349 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.287     4.636    clk_IBUF
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.660 r  clk_IBUF_BUFG_inst/O
+    X4Y5 (CLOCK_ROOT)    net (fo=6266, routed)        1.989     6.649    Delay1No12_instance/clk_IBUF_BUFG
+    SLICE_X133Y425       FDCE                                         r  Delay1No12_instance/Y_reg[21]/C
+                         clock pessimism              0.376     7.025    
+                         inter-SLR compensation      -0.173     6.852    
+                         clock uncertainty           -0.035     6.816    
+    SLICE_X133Y425       FDCE (Setup_DFF_SLICEM_C_D)
+                                                      0.025     6.841    Delay1No12_instance/Y_reg[21]
+  -------------------------------------------------------------------
+                         required time                          6.841    
+                         arrival time                          -6.568    
+  -------------------------------------------------------------------
+                         slack                                  0.274    
+
+
+
+
