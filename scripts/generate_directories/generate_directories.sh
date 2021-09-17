@@ -71,7 +71,6 @@ mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_7_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_8_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_9_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_10_ultrascale2_250
-mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_11_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_12_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_13_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_14_ultrascale2_250
@@ -82,7 +81,8 @@ mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_18_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_19_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_20_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_21_ultrascale2_250
-mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_22_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_23_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_24_ultrascale2_250
 mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_25_ultrascale2_250
+mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_31_ultrascale2_250
+mkdir ../../int_II_synth/r2_FFT/r2_FFT_ED97_32_ultrascale2_250
