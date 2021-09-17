@@ -17,6 +17,9 @@
 
 =====================
 
+zip:
+- a zip folder containing the whole directory for an easy download
+
 data files: 
 - schedules for all schedulers as csv files
 - a .vhd file for each synthesis
@@ -34,8 +37,9 @@ scripts:
 
 =====================
 
+0) download and unzip "date_2022_open_data_anonymous.zip"
 1) optional: you can re-generate synthesis results using the provided .vhd files
-2) make bash scripts executable
+2) make bash scripts executable if necessary
 3) navigate into "scripts/generate_directories" and execute "generate_directories.sh". This sets up the folder structure for the following scripts
 4) navigate into "scripts/create_scheduling_summary_table" and execute "create_scheduling_summary_table.py" to generate Table II from the paper
 5) navigate into "scripts/create_synthesis_result_files"
