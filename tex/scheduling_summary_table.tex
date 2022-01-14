@@ -1,0 +1,34 @@
+\begin{table*}[htbp]
+\centering
+\begin{threeparttable}
+\caption{Scheduling results with five minutes timeout}
+\label{tab:RatIISchedComp}
+\renewcommand\tabcolsep{2.4mm}
+\newcommand\NA{\multicolumn{1}{r}{--}}
+\begin{tabular}{lrrrrrrrrrr}
+\toprule 
+ & & & \multicolumn{2}{l}{\rlap{\rotatebox{20}{prop. exact uniform}}} & \multicolumn{2}{l}{\rlap{\rotatebox{20}{exact uniform [1]}}} & \multicolumn{2}{l}{\rlap{\rotatebox{20}{heuristic uniform [1]}}} & \multicolumn{2}{l}{\rlap{\rotatebox{20}{exact non-uniform [1]}}} \\ 
+\cmidrule(rl){4-5}\cmidrule(rl){6-7}\cmidrule(rl){8-9}\cmidrule(rl){10-11}
+instance & \rotatebox{90}{\rlap{problems}} & \rotatebox{90}{\rlap{operations.}} & \rotatebox{90}{solved} & \rotatebox{90}{optimal} & \rotatebox{90}{solved} & \rotatebox{90}{optimal} & \rotatebox{90}{solved} & \rotatebox{90}{optimal} & \rotatebox{90}{solved} & \rotatebox{90}{optimal} \\ 
+\midrule
+\testname{ van dongen } & 9 & 10 & 0 & 0 & 0 & 0 & 0 & - & 9 & 9 \\ 
+\testname{ hilbert } & 3 & 14 & 3 & 3 & 3 & 3 & 3 & - & 3 & 3 \\ 
+\testname{ gen } & 7 & 15 & 7 & 7 & 7 & 7 & 7 & - & 7 & 7 \\ 
+\testname{ gm } & 5 & 16 & 5 & 5 & 5 & 5 & 5 & - & 5 & 5 \\ 
+\testname{ srg } & 1 & 17 & 1 & 1 & 1 & 1 & 1 & - & 1 & 1 \\ 
+\testname{ ycbcr } & 3 & 22 & 3 & 3 & 3 & 3 & 3 & - & 3 & 3 \\ 
+\testname{ rgb } & 7 & 24 & 7 & 7 & 7 & 7 & 7 & - & 7 & 7 \\ 
+\testname{ spline } & 26 & 26 & 26 & 26 & 26 & 24 & 26 & - & 26 & 26 \\ 
+\testname{ lin. phase } & 71 & 29 & 71 & 71 & 61 & 61 & 71 & - & 71 & 71 \\ 
+\testname{ sam } & 500 & 121 & 500 & 500 & 9 & 4 & 500 & - & 500 & 106 \\ 
+\testname{ iir } & 123 & 194 & 122 & 63 & 0 & 0 & 122 & - & 84 & 82 \\ 
+\testname{ cholesky } & 197 & 266 & 100 & 33 & 2 & 2 & 135 & - & 18 & 9 \\ 
+\testname{ r-2 FFT } & 232 & 576 & 6 & 1 & 1 & 1 & 108 & - & 5 & 1 \\ 
+\midrule
+\testname{{avg.}} & - & - & 71\% & 60\% & 10\% & 9\% & 83\% & - & 62\% & 27\%\\ 
+\testname{total} & 1184 & - & 851 & 720 & 125 & 118 & 988 & - & 739 & 330\\ 
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table*}
+

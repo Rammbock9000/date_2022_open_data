@@ -1,5 +1,6 @@
 \documentclass{article}
 
+% used packages
 \usepackage{threeparttable}
 \usepackage{booktabs}
 \usepackage{graphicx}
@@ -12,6 +13,18 @@
 \usepackage[simplified]{pgf-umlcd}
 \usepackage{pgfplotstable}
 \usepackage{lscape}
+
+% settings
+\usetikzlibrary{arrows}
+\usetikzlibrary{automata}
+\usetikzlibrary{fit}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{patterns}
+\usetikzlibrary{backgrounds}
+\pgfplotsset{compat=1.15}
+\usepgfplotslibrary{fillbetween}
 
 \begin{document}
 
@@ -41,5 +54,8 @@ black,densely dashed,every mark/.append style={solid,fill=gray},mark=diamond*\\%
 
 % plot with energies
 \input{energy_plot}
+
+% plot for c variation
+\input{c_vs_e_vs_allocs_plot.tex}
 
 \end{document}

@@ -1,0 +1,78 @@
+\begin{figure}[htbp]
+    \centering
+\begin{tikzpicture}
+\pgfplotsset{
+    %scale only axis,
+    %scaled x ticks=base 10:3,
+    xmin=2, xmax=12,
+    xtick={2,3,4,5,6,7,8,9,10,11,12}
+}
+
+\begin{axis}[
+  axis y line*=left,
+  ymin=0, ymax=35,
+  xlabel=max. $C$,
+  ylabel={$\Delta E_s$ [\%]},
+  ytick={0,5,10,15,20,25,30,35},
+  width = 0.9\linewidth,
+  height= 90mm,
+]
+\addplot[
+    thick,
+    red,
+    %c0,
+    solid,
+    %only marks, 
+    mark=square, 
+    mark options={solid, scale=1.0},
+    ] 
+    table [x=maxquot, y=avg,col sep = semicolon] {../synth_results/C_vs_E_vs_allocs/delta_E_all.csv}; \label{plot_one}
+%\addlegendimage{/pgfplots/refstyle=Hplot}
+%\addlegendentry{plot 1}
+
+\addplot[
+    thick,
+    %green,
+    c2,
+    dashed,
+    %only marks, 
+    mark=triangle, 
+    mark options={solid, scale=1.5},
+    ] 
+    table [x=maxquot, y=max,col sep = semicolon] {../synth_results/C_vs_E_vs_allocs/delta_E_all.csv}; \label{plot_two}
+%\addlegendentry{plot 2}
+\end{axis}
+
+\begin{axis}[
+  axis y line*=right,
+  axis x line=none,
+  ymin=0, ymax=200,
+  ylabel=\# allocs,
+  ytick={0,25,50,75,100,125,150,175,200},
+  width = 0.9\linewidth,
+  height= 90mm,
+  legend style={at={(0.575,0.05)},anchor=south west},
+  legend cell align = left,
+]
+\addlegendimage{/pgfplots/refstyle=plot_one}
+\addlegendentry{avg. $\Delta E_s$}
+\addlegendimage{/pgfplots/refstyle=plot_two}
+\addlegendentry{max. $\Delta E_s$}
+\addplot[
+    thick,
+    dotted,
+    blue,
+    %c2,
+    %only marks, 
+    mark=x, 
+    mark options={solid, scale=1.5},
+    %mark options={scale=1.8, solid, draw=blue}
+    ] 
+    table [x=maxquot, y=numAllocs,col sep = semicolon] {../synth_results/C_vs_E_vs_allocs/delta_E_all.csv}; \label{plot_three} 
+\addlegendentry{\# allocs}
+\end{axis}
+
+\end{tikzpicture}
+    \caption{Comparing the average and maximum energy savings for various upper bounds of $C$}
+    \label{fig:compare_delta_E}
+\end{figure}
