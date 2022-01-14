@@ -103,7 +103,7 @@ def process(max_M,max_S,max_quot,new_file):
                 elif scheduler == 'NonUniformILP':
                     lines[line_number] = lines[line_number].replace(';D;', f';{epsErrMinus};')
                     lines[line_number] = lines[line_number].replace(';E;', f';{epsSavingsAvg};')
-                    lines[line_number] = lines[line_number].replace(';F;', f';{epsErrPlus};')
+                    lines[line_number] = lines[line_number].replace(';F', f';{epsErrPlus}')
                 else:
                     raise Exception(f'invalid scheduler: {scheduler}')
             with open(new_file, 'w') as f2:
@@ -130,10 +130,10 @@ def sort_table(new_file, scale_FFT):
                     letters = ["A", "B", "C", "D", "E", "F"]
                     for letter in letters:
                         line = line.replace(f";{letter}", ";0.0")
-                    elements = line.split(";")
+                    elements = line.replace("\n","").split(";")
                     if model == "r2FFT" and scale_FFT:
                         for i, element in enumerate(elements):
-                            if "\n" in element or model in element:
+                            if model in element:
                                 continue
                             elements[i] = float(element)/10.0
                     for element in elements:
@@ -141,6 +141,7 @@ def sort_table(new_file, scale_FFT):
                             f.write(model)
                         else:
                             f.write(f";{element}")
+                    f.write("\n")
                     found_model = True
                     break
             if not found_model:
