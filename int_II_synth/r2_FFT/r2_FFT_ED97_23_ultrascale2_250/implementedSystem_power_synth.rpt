@@ -1,0 +1,1448 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date             : Tue Nov 30 06:41:52 2021
+| Host             : animal.digi.e-technik.uni-kassel.de running 64-bit AlmaLinux release 8.4 (Electric Cheetah)
+| Command          : report_power -file /home/nfiege/Repositories/origami/vhdl/ratII/synth/intII/r2_FFT/r2_FFT_ED97_23_wrapper_ultrascale2_250/implementedSystem_toplevel_wrapper_power_synth.rpt
+| Design           : implementedSystem_toplevel_wrapper
+| Device           : xcvu13p-fhga2104-2-e
+| Design State     : routed
+| Grade            : extended
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 6.257        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 3.247        |
+| Device Static (W)        | 3.010        |
+| Effective TJA (C/W)      | 0.5          |
+| Max Ambient (C)          | 96.6         |
+| Junction Temperature (C) | 28.4         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.299 |        3 |       --- |             --- |
+| CLB Logic               |     1.161 |    79806 |       --- |             --- |
+|   LUT as Logic          |     1.042 |    33967 |   1728000 |            1.97 |
+|   Register              |     0.089 |    34710 |   3456000 |            1.00 |
+|   CARRY8                |     0.019 |     1486 |    216000 |            0.69 |
+|   LUT as Shift Register |     0.011 |      534 |    791040 |            0.07 |
+|   Others                |     0.000 |     1469 |       --- |             --- |
+|   F7/F8 Muxes           |     0.000 |      128 |   1728000 |           <0.01 |
+| Signals                 |     1.538 |    63272 |       --- |             --- |
+| DSPs                    |     0.215 |      128 |     12288 |            1.04 |
+| I/O                     |     0.034 |      103 |       832 |           12.38 |
+| Static Power            |     3.010 |          |           |                 |
+| Total                   |     6.257 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++------------+-------------+-----------+-------------+------------+
+| Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++------------+-------------+-----------+-------------+------------+
+| Vccint     |       0.850 |     5.003 |       3.779 |      1.224 |
+| Vccint_io  |       0.850 |     0.145 |       0.002 |      0.143 |
+| Vccbram    |       0.850 |     0.021 |       0.000 |      0.021 |
+| Vccaux     |       1.800 |     0.881 |       0.000 |      0.881 |
+| Vccaux_io  |       1.800 |     0.112 |       0.008 |      0.104 |
+| Vcco33     |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18     |       1.800 |     0.010 |       0.010 |      0.000 |
+| Vcco15     |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135    |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12     |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vcco10     |       1.000 |     0.000 |       0.000 |      0.000 |
+| Vccadc     |       1.800 |     0.032 |       0.000 |      0.032 |
+| MGTYAVcc   |       0.900 |     0.000 |       0.000 |      0.000 |
+| MGTYAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTYVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
++------------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 0.5                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 0.7                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+| clk   | clk    |             4.0 |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-------------------------------------+-----------+
+| Name                                | Power (W) |
++-------------------------------------+-----------+
+| implementedSystem_toplevel_wrapper  |     3.247 |
+|   DUT                               |     3.192 |
+|     Add115_impl_instance            |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add116_impl_instance            |     0.010 |
+|       FPAddSubOp_instance           |     0.010 |
+|         LZC_component               |     0.005 |
+|         fracAdder                   |     0.001 |
+|     Add117_impl_instance            |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add118_impl_instance            |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add119_impl_instance            |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add11_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add120_impl_instance            |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add123_impl_instance            |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add125_impl_instance            |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add126_impl_instance            |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add12_impl_instance             |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |    <0.001 |
+|     Add14_impl_instance             |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add15_impl_instance             |     0.010 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add16_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add18_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add26_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add28_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add29_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add2_impl_instance              |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add31_impl_instance             |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add32_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add35_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add36_impl_instance             |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add3_impl_instance              |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add55_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add65_impl_instance             |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |    <0.001 |
+|     Add67_impl_instance             |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add68_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add69_impl_instance             |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add6_impl_instance              |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add70_impl_instance             |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add72_impl_instance             |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add78_impl_instance             |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |    <0.001 |
+|     Add79_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add7_impl_instance              |     0.010 |
+|       FPAddSubOp_instance           |     0.010 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.002 |
+|     Add84_impl_instance             |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add8_impl_instance              |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Add9_impl_instance              |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.005 |
+|         fracAdder                   |     0.001 |
+|     Delay1No100_instance            |     0.001 |
+|     Delay1No101_instance            |    <0.001 |
+|     Delay1No102_instance            |    <0.001 |
+|     Delay1No103_instance            |    <0.001 |
+|     Delay1No104_instance            |     0.002 |
+|     Delay1No105_instance            |    <0.001 |
+|     Delay1No106_instance            |     0.005 |
+|     Delay1No107_instance            |     0.008 |
+|     Delay1No108_instance            |    <0.001 |
+|     Delay1No109_instance            |     0.002 |
+|     Delay1No10_instance             |     0.001 |
+|     Delay1No110_instance            |     0.001 |
+|     Delay1No111_instance            |    <0.001 |
+|     Delay1No112_instance            |    <0.001 |
+|     Delay1No113_instance            |    <0.001 |
+|     Delay1No114_instance            |     0.001 |
+|     Delay1No115_instance            |    <0.001 |
+|     Delay1No116_instance            |     0.005 |
+|     Delay1No117_instance            |     0.007 |
+|     Delay1No118_instance            |    <0.001 |
+|     Delay1No119_instance            |    <0.001 |
+|     Delay1No11_instance             |     0.002 |
+|     Delay1No120_instance            |    <0.001 |
+|     Delay1No121_instance            |    <0.001 |
+|     Delay1No122_instance            |    <0.001 |
+|     Delay1No123_instance            |    <0.001 |
+|     Delay1No124_instance            |    <0.001 |
+|     Delay1No125_instance            |    <0.001 |
+|     Delay1No126_instance            |     0.005 |
+|     Delay1No127_instance            |     0.008 |
+|     Delay1No128_instance            |    <0.001 |
+|     Delay1No129_instance            |     0.001 |
+|     Delay1No12_instance             |     0.001 |
+|     Delay1No130_instance            |    <0.001 |
+|     Delay1No131_instance            |    <0.001 |
+|     Delay1No132_instance            |    <0.001 |
+|     Delay1No133_instance            |     0.001 |
+|     Delay1No134_instance            |    <0.001 |
+|     Delay1No135_instance            |    <0.001 |
+|     Delay1No136_instance            |     0.005 |
+|     Delay1No137_instance            |     0.007 |
+|     Delay1No138_instance            |    <0.001 |
+|     Delay1No139_instance            |    <0.001 |
+|     Delay1No13_instance             |     0.002 |
+|     Delay1No140_instance            |    <0.001 |
+|     Delay1No141_instance            |    <0.001 |
+|     Delay1No142_instance            |    <0.001 |
+|     Delay1No143_instance            |    <0.001 |
+|     Delay1No144_instance            |     0.002 |
+|     Delay1No145_instance            |    <0.001 |
+|     Delay1No146_instance            |     0.005 |
+|     Delay1No147_instance            |     0.008 |
+|     Delay1No148_instance            |    <0.001 |
+|     Delay1No149_instance            |     0.001 |
+|     Delay1No14_instance             |     0.001 |
+|     Delay1No150_instance            |     0.001 |
+|     Delay1No151_instance            |     0.001 |
+|     Delay1No152_instance            |     0.001 |
+|     Delay1No153_instance            |     0.002 |
+|     Delay1No154_instance            |    <0.001 |
+|     Delay1No155_instance            |    <0.001 |
+|     Delay1No156_instance            |     0.005 |
+|     Delay1No157_instance            |     0.007 |
+|     Delay1No158_instance            |    <0.001 |
+|     Delay1No159_instance            |     0.001 |
+|     Delay1No15_instance             |     0.001 |
+|     Delay1No160_instance            |    <0.001 |
+|     Delay1No161_instance            |    <0.001 |
+|     Delay1No162_instance            |     0.002 |
+|     Delay1No163_instance            |     0.002 |
+|     Delay1No164_instance            |    <0.001 |
+|     Delay1No165_instance            |     0.001 |
+|     Delay1No166_instance            |     0.005 |
+|     Delay1No167_instance            |     0.007 |
+|     Delay1No168_instance            |     0.005 |
+|     Delay1No169_instance            |     0.007 |
+|     Delay1No16_instance             |     0.002 |
+|     Delay1No170_instance            |    <0.001 |
+|     Delay1No171_instance            |    <0.001 |
+|     Delay1No172_instance            |    <0.001 |
+|     Delay1No173_instance            |     0.001 |
+|     Delay1No174_instance            |    <0.001 |
+|     Delay1No175_instance            |     0.001 |
+|     Delay1No176_instance            |    <0.001 |
+|     Delay1No177_instance            |    <0.001 |
+|     Delay1No178_instance            |     0.006 |
+|     Delay1No179_instance            |     0.007 |
+|     Delay1No17_instance             |    <0.001 |
+|     Delay1No180_instance            |    <0.001 |
+|     Delay1No183_instance            |     0.002 |
+|     Delay1No185_instance            |     0.002 |
+|     Delay1No186_instance            |    <0.001 |
+|     Delay1No188_instance            |     0.005 |
+|     Delay1No189_instance            |     0.007 |
+|     Delay1No18_instance             |     0.001 |
+|     Delay1No191_instance            |     0.002 |
+|     Delay1No192_instance            |    <0.001 |
+|     Delay1No193_instance            |     0.002 |
+|     Delay1No194_instance            |    <0.001 |
+|     Delay1No198_instance            |     0.005 |
+|     Delay1No199_instance            |     0.007 |
+|     Delay1No19_instance             |     0.002 |
+|     Delay1No1_instance              |     0.002 |
+|     Delay1No201_instance            |    <0.001 |
+|     Delay1No202_instance            |    <0.001 |
+|     Delay1No203_instance            |     0.002 |
+|     Delay1No205_instance            |     0.002 |
+|     Delay1No206_instance            |     0.001 |
+|     Delay1No207_instance            |     0.002 |
+|     Delay1No208_instance            |     0.005 |
+|     Delay1No209_instance            |     0.007 |
+|     Delay1No20_instance             |     0.001 |
+|     Delay1No214_instance            |    <0.001 |
+|     Delay1No215_instance            |     0.001 |
+|     Delay1No216_instance            |     0.003 |
+|     Delay1No217_instance            |    <0.001 |
+|     Delay1No218_instance            |     0.005 |
+|     Delay1No219_instance            |     0.007 |
+|     Delay1No21_instance             |    <0.001 |
+|     Delay1No220_instance            |     0.005 |
+|     Delay1No221_instance            |     0.007 |
+|     Delay1No224_instance            |     0.001 |
+|     Delay1No227_instance            |     0.001 |
+|     Delay1No228_instance            |     0.002 |
+|     Delay1No229_instance            |    <0.001 |
+|     Delay1No22_instance             |     0.002 |
+|     Delay1No230_instance            |     0.005 |
+|     Delay1No231_instance            |     0.007 |
+|     Delay1No232_instance            |     0.005 |
+|     Delay1No233_instance            |     0.007 |
+|     Delay1No236_instance            |    <0.001 |
+|     Delay1No239_instance            |     0.002 |
+|     Delay1No23_instance             |     0.001 |
+|     Delay1No240_instance            |     0.003 |
+|     Delay1No241_instance            |    <0.001 |
+|     Delay1No242_instance            |     0.005 |
+|     Delay1No243_instance            |     0.007 |
+|     Delay1No244_instance            |     0.005 |
+|     Delay1No245_instance            |     0.008 |
+|     Delay1No248_instance            |     0.001 |
+|     Delay1No24_instance             |     0.002 |
+|     Delay1No251_instance            |     0.001 |
+|     Delay1No252_instance            |     0.002 |
+|     Delay1No253_instance            |     0.002 |
+|     Delay1No254_instance            |     0.005 |
+|     Delay1No255_instance            |     0.008 |
+|     Delay1No256_instance            |     0.005 |
+|     Delay1No257_instance            |     0.007 |
+|     Delay1No258_instance            |     0.005 |
+|     Delay1No259_instance            |     0.007 |
+|     Delay1No25_instance             |    <0.001 |
+|     Delay1No260_instance            |     0.005 |
+|     Delay1No261_instance            |     0.008 |
+|     Delay1No262_instance            |     0.005 |
+|     Delay1No263_instance            |     0.007 |
+|     Delay1No264_instance            |     0.005 |
+|     Delay1No265_instance            |     0.007 |
+|     Delay1No266_instance            |     0.005 |
+|     Delay1No267_instance            |     0.008 |
+|     Delay1No268_instance            |     0.005 |
+|     Delay1No269_instance            |     0.007 |
+|     Delay1No26_instance             |    <0.001 |
+|     Delay1No270_instance            |     0.005 |
+|     Delay1No271_instance            |     0.007 |
+|     Delay1No272_instance            |     0.005 |
+|     Delay1No273_instance            |     0.007 |
+|     Delay1No274_instance            |     0.005 |
+|     Delay1No275_instance            |     0.007 |
+|     Delay1No276_instance            |     0.005 |
+|     Delay1No277_instance            |     0.007 |
+|     Delay1No278_instance            |     0.006 |
+|     Delay1No279_instance            |     0.008 |
+|     Delay1No27_instance             |     0.004 |
+|     Delay1No280_instance            |     0.005 |
+|     Delay1No281_instance            |     0.008 |
+|     Delay1No282_instance            |     0.005 |
+|     Delay1No283_instance            |     0.008 |
+|     Delay1No284_instance            |     0.005 |
+|     Delay1No285_instance            |     0.007 |
+|     Delay1No286_instance            |     0.005 |
+|     Delay1No287_instance            |     0.007 |
+|     Delay1No288_instance            |     0.005 |
+|     Delay1No289_instance            |     0.008 |
+|     Delay1No28_instance             |    <0.001 |
+|     Delay1No290_instance            |     0.005 |
+|     Delay1No291_instance            |     0.007 |
+|     Delay1No292_instance            |     0.005 |
+|     Delay1No293_instance            |     0.007 |
+|     Delay1No294_instance            |     0.005 |
+|     Delay1No295_instance            |     0.008 |
+|     Delay1No296_instance            |     0.005 |
+|     Delay1No297_instance            |     0.008 |
+|     Delay1No298_instance            |     0.006 |
+|     Delay1No299_instance            |     0.008 |
+|     Delay1No29_instance             |     0.001 |
+|     Delay1No2_instance              |    <0.001 |
+|     Delay1No300_instance            |     0.005 |
+|     Delay1No301_instance            |     0.007 |
+|     Delay1No302_instance            |     0.005 |
+|     Delay1No303_instance            |     0.007 |
+|     Delay1No304_instance            |     0.005 |
+|     Delay1No305_instance            |     0.007 |
+|     Delay1No306_instance            |     0.006 |
+|     Delay1No307_instance            |     0.008 |
+|     Delay1No308_instance            |     0.006 |
+|     Delay1No309_instance            |     0.008 |
+|     Delay1No30_instance             |    <0.001 |
+|     Delay1No310_instance            |     0.005 |
+|     Delay1No311_instance            |     0.007 |
+|     Delay1No31_instance             |     0.001 |
+|     Delay1No32_instance             |     0.005 |
+|     Delay1No33_instance             |     0.007 |
+|     Delay1No34_instance             |     0.005 |
+|     Delay1No35_instance             |     0.007 |
+|     Delay1No36_instance             |     0.005 |
+|     Delay1No37_instance             |     0.007 |
+|     Delay1No38_instance             |     0.005 |
+|     Delay1No39_instance             |     0.007 |
+|     Delay1No3_instance              |     0.002 |
+|     Delay1No40_instance             |     0.005 |
+|     Delay1No41_instance             |     0.007 |
+|     Delay1No42_instance             |     0.006 |
+|     Delay1No43_instance             |     0.008 |
+|     Delay1No44_instance             |     0.004 |
+|     Delay1No45_instance             |     0.007 |
+|     Delay1No46_instance             |     0.005 |
+|     Delay1No47_instance             |     0.008 |
+|     Delay1No48_instance             |     0.005 |
+|     Delay1No49_instance             |     0.007 |
+|     Delay1No4_instance              |    <0.001 |
+|     Delay1No50_instance             |     0.005 |
+|     Delay1No51_instance             |     0.007 |
+|     Delay1No52_instance             |     0.005 |
+|     Delay1No53_instance             |     0.008 |
+|     Delay1No54_instance             |     0.005 |
+|     Delay1No55_instance             |     0.007 |
+|     Delay1No56_instance             |     0.005 |
+|     Delay1No57_instance             |     0.008 |
+|     Delay1No58_instance             |     0.005 |
+|     Delay1No59_instance             |     0.008 |
+|     Delay1No5_instance              |    <0.001 |
+|     Delay1No60_instance             |     0.005 |
+|     Delay1No61_instance             |     0.007 |
+|     Delay1No62_instance             |     0.005 |
+|     Delay1No63_instance             |     0.008 |
+|     Delay1No64_instance             |     0.005 |
+|     Delay1No65_instance             |     0.008 |
+|     Delay1No66_instance             |     0.006 |
+|     Delay1No67_instance             |     0.007 |
+|     Delay1No68_instance             |     0.005 |
+|     Delay1No69_instance             |     0.007 |
+|     Delay1No6_instance              |    <0.001 |
+|     Delay1No70_instance             |     0.005 |
+|     Delay1No71_instance             |     0.007 |
+|     Delay1No72_instance             |     0.005 |
+|     Delay1No73_instance             |     0.007 |
+|     Delay1No74_instance             |     0.005 |
+|     Delay1No75_instance             |     0.007 |
+|     Delay1No76_instance             |     0.005 |
+|     Delay1No77_instance             |     0.008 |
+|     Delay1No78_instance             |     0.005 |
+|     Delay1No79_instance             |     0.007 |
+|     Delay1No7_instance              |     0.001 |
+|     Delay1No80_instance             |     0.005 |
+|     Delay1No81_instance             |     0.007 |
+|     Delay1No82_instance             |     0.005 |
+|     Delay1No83_instance             |     0.007 |
+|     Delay1No84_instance             |     0.005 |
+|     Delay1No85_instance             |     0.007 |
+|     Delay1No86_instance             |     0.005 |
+|     Delay1No87_instance             |     0.007 |
+|     Delay1No89_instance             |    <0.001 |
+|     Delay1No8_instance              |     0.001 |
+|     Delay1No90_instance             |    <0.001 |
+|     Delay1No91_instance             |    <0.001 |
+|     Delay1No92_instance             |    <0.001 |
+|     Delay1No93_instance             |    <0.001 |
+|     Delay1No94_instance             |     0.001 |
+|     Delay1No95_instance             |    <0.001 |
+|     Delay1No96_instance             |     0.005 |
+|     Delay1No97_instance             |     0.008 |
+|     Delay1No99_instance             |    <0.001 |
+|     Delay1No9_instance              |     0.001 |
+|     Delay1No_instance               |    <0.001 |
+|     Delay2No10_instance             |    <0.001 |
+|     Delay2No13_instance             |    <0.001 |
+|     Delay2No14_instance             |    <0.001 |
+|     Delay2No15_instance             |    <0.001 |
+|     Delay2No16_instance             |    <0.001 |
+|     Delay2No19_instance             |    <0.001 |
+|     Delay2No1_instance              |    <0.001 |
+|     Delay2No20_instance             |    <0.001 |
+|     Delay2No23_instance             |     0.001 |
+|     Delay2No24_instance             |     0.001 |
+|     Delay2No25_instance             |    <0.001 |
+|     Delay2No26_instance             |    <0.001 |
+|     Delay2No27_instance             |    <0.001 |
+|     Delay2No28_instance             |    <0.001 |
+|     Delay2No29_instance             |    <0.001 |
+|     Delay2No2_instance              |    <0.001 |
+|     Delay2No30_instance             |    <0.001 |
+|     Delay2No31_instance             |    <0.001 |
+|     Delay2No32_instance             |    <0.001 |
+|     Delay2No37_instance             |    <0.001 |
+|     Delay2No3_instance              |    <0.001 |
+|     Delay2No40_instance             |    <0.001 |
+|     Delay2No41_instance             |    <0.001 |
+|     Delay2No42_instance             |    <0.001 |
+|     Delay2No47_instance             |    <0.001 |
+|     Delay2No48_instance             |    <0.001 |
+|     Delay2No4_instance              |    <0.001 |
+|     Delay2No52_instance             |    <0.001 |
+|     Delay2No53_instance             |    <0.001 |
+|     Delay2No54_instance             |    <0.001 |
+|     Delay2No7_instance              |    <0.001 |
+|     Delay2No8_instance              |    <0.001 |
+|     Delay2No9_instance              |    <0.001 |
+|     Delay2No_instance               |    <0.001 |
+|     MUX_Add115_impl_0_instance      |    <0.001 |
+|     MUX_Add115_impl_1_instance      |    <0.001 |
+|     MUX_Add116_impl_0_instance      |     0.001 |
+|     MUX_Add116_impl_1_instance      |     0.001 |
+|     MUX_Add117_impl_0_instance      |    <0.001 |
+|     MUX_Add117_impl_1_instance      |    <0.001 |
+|     MUX_Add118_impl_0_instance      |    <0.001 |
+|     MUX_Add118_impl_1_instance      |    <0.001 |
+|     MUX_Add119_impl_0_instance      |    <0.001 |
+|     MUX_Add119_impl_1_instance      |    <0.001 |
+|     MUX_Add11_impl_0_instance       |     0.001 |
+|     MUX_Add11_impl_1_instance       |     0.001 |
+|     MUX_Add120_impl_0_instance      |     0.001 |
+|     MUX_Add120_impl_1_instance      |     0.001 |
+|     MUX_Add123_impl_0_instance      |     0.001 |
+|     MUX_Add123_impl_1_instance      |     0.001 |
+|     MUX_Add125_impl_0_instance      |     0.001 |
+|     MUX_Add125_impl_1_instance      |     0.001 |
+|     MUX_Add126_impl_0_instance      |     0.001 |
+|     MUX_Add126_impl_1_instance      |     0.001 |
+|     MUX_Add12_impl_0_instance       |    <0.001 |
+|     MUX_Add12_impl_1_instance       |     0.001 |
+|     MUX_Add14_impl_0_instance       |     0.001 |
+|     MUX_Add14_impl_1_instance       |     0.001 |
+|     MUX_Add15_impl_0_instance       |    <0.001 |
+|     MUX_Add15_impl_1_instance       |    <0.001 |
+|     MUX_Add16_impl_0_instance       |     0.001 |
+|     MUX_Add16_impl_1_instance       |     0.001 |
+|     MUX_Add18_impl_0_instance       |     0.001 |
+|     MUX_Add18_impl_1_instance       |    <0.001 |
+|     MUX_Add26_impl_0_instance       |     0.001 |
+|     MUX_Add26_impl_1_instance       |     0.001 |
+|     MUX_Add28_impl_0_instance       |    <0.001 |
+|     MUX_Add28_impl_1_instance       |     0.001 |
+|     MUX_Add29_impl_0_instance       |     0.001 |
+|     MUX_Add29_impl_1_instance       |     0.001 |
+|     MUX_Add2_impl_0_instance        |     0.001 |
+|     MUX_Add2_impl_1_instance        |     0.001 |
+|     MUX_Add31_impl_0_instance       |     0.001 |
+|     MUX_Add31_impl_1_instance       |     0.001 |
+|     MUX_Add32_impl_0_instance       |     0.001 |
+|     MUX_Add32_impl_1_instance       |     0.001 |
+|     MUX_Add35_impl_0_instance       |     0.001 |
+|     MUX_Add35_impl_1_instance       |     0.001 |
+|     MUX_Add36_impl_0_instance       |     0.001 |
+|     MUX_Add36_impl_1_instance       |     0.001 |
+|     MUX_Add3_impl_0_instance        |     0.001 |
+|     MUX_Add3_impl_1_instance        |    <0.001 |
+|     MUX_Add55_impl_0_instance       |     0.001 |
+|     MUX_Add55_impl_1_instance       |     0.001 |
+|     MUX_Add65_impl_0_instance       |     0.001 |
+|     MUX_Add65_impl_1_instance       |     0.001 |
+|     MUX_Add67_impl_0_instance       |     0.001 |
+|     MUX_Add67_impl_1_instance       |     0.001 |
+|     MUX_Add68_impl_0_instance       |     0.001 |
+|     MUX_Add68_impl_1_instance       |     0.001 |
+|     MUX_Add69_impl_0_instance       |     0.001 |
+|     MUX_Add69_impl_1_instance       |     0.001 |
+|     MUX_Add6_impl_0_instance        |     0.001 |
+|     MUX_Add6_impl_1_instance        |     0.001 |
+|     MUX_Add70_impl_0_instance       |     0.001 |
+|     MUX_Add70_impl_1_instance       |     0.001 |
+|     MUX_Add72_impl_0_instance       |     0.001 |
+|     MUX_Add72_impl_1_instance       |     0.001 |
+|     MUX_Add78_impl_0_instance       |     0.001 |
+|     MUX_Add78_impl_1_instance       |     0.001 |
+|     MUX_Add7_impl_0_instance        |     0.001 |
+|     MUX_Add7_impl_1_instance        |     0.001 |
+|     MUX_Add8_impl_0_instance        |     0.001 |
+|     MUX_Add8_impl_1_instance        |     0.001 |
+|     MUX_Add9_impl_0_instance        |     0.001 |
+|     MUX_Add9_impl_1_instance        |     0.001 |
+|     MUX_Product10_impl_1_instance   |     0.001 |
+|     MUX_Product114_impl_0_instance  |    <0.001 |
+|     MUX_Product114_impl_1_instance  |    <0.001 |
+|     MUX_Product11_impl_1_instance   |     0.001 |
+|     MUX_Product120_impl_1_instance  |     0.001 |
+|     MUX_Product121_impl_1_instance  |     0.001 |
+|     MUX_Product122_impl_1_instance  |     0.001 |
+|     MUX_Product123_impl_1_instance  |     0.001 |
+|     MUX_Product124_impl_1_instance  |     0.001 |
+|     MUX_Product126_impl_1_instance  |     0.001 |
+|     MUX_Product127_impl_1_instance  |     0.001 |
+|     MUX_Product12_impl_1_instance   |    <0.001 |
+|     MUX_Product13_impl_0_instance   |    <0.001 |
+|     MUX_Product13_impl_1_instance   |    <0.001 |
+|     MUX_Product14_impl_0_instance   |    <0.001 |
+|     MUX_Product14_impl_1_instance   |     0.001 |
+|     MUX_Product15_impl_0_instance   |    <0.001 |
+|     MUX_Product16_impl_0_instance   |    <0.001 |
+|     MUX_Product17_impl_0_instance   |    <0.001 |
+|     MUX_Product18_impl_1_instance   |     0.001 |
+|     MUX_Product19_impl_0_instance   |    <0.001 |
+|     MUX_Product213_impl_1_instance  |     0.001 |
+|     MUX_Product21_impl_0_instance   |    <0.001 |
+|     MUX_Product221_impl_0_instance  |    <0.001 |
+|     MUX_Product222_impl_0_instance  |    <0.001 |
+|     MUX_Product226_impl_0_instance  |    <0.001 |
+|     MUX_Product22_impl_0_instance   |    <0.001 |
+|     MUX_Product23_impl_0_instance   |    <0.001 |
+|     MUX_Product23_impl_1_instance   |     0.001 |
+|     MUX_Product24_impl_0_instance   |    <0.001 |
+|     MUX_Product24_impl_1_instance   |     0.001 |
+|     MUX_Product25_impl_0_instance   |    <0.001 |
+|     MUX_Product25_impl_1_instance   |     0.001 |
+|     MUX_Product26_impl_0_instance   |    <0.001 |
+|     MUX_Product26_impl_1_instance   |     0.001 |
+|     MUX_Product27_impl_0_instance   |    <0.001 |
+|     MUX_Product27_impl_1_instance   |     0.001 |
+|     MUX_Product28_impl_0_instance   |    <0.001 |
+|     MUX_Product28_impl_1_instance   |     0.001 |
+|     MUX_Product313_impl_0_instance  |    <0.001 |
+|     MUX_Product313_impl_1_instance  |    <0.001 |
+|     MUX_Product31_impl_0_instance   |    <0.001 |
+|     MUX_Product31_impl_1_instance   |    <0.001 |
+|     MUX_Product32_impl_1_instance   |    <0.001 |
+|     MUX_Product33_impl_1_instance   |    <0.001 |
+|     MUX_Product34_impl_0_instance   |    <0.001 |
+|     MUX_Product34_impl_1_instance   |    <0.001 |
+|     MUX_Product35_impl_0_instance   |    <0.001 |
+|     MUX_Product35_impl_1_instance   |    <0.001 |
+|     MUX_Product36_impl_0_instance   |    <0.001 |
+|     MUX_Product36_impl_1_instance   |    <0.001 |
+|     MUX_Product37_impl_0_instance   |    <0.001 |
+|     MUX_Product37_impl_1_instance   |    <0.001 |
+|     MUX_Product38_impl_0_instance   |    <0.001 |
+|     MUX_Product38_impl_1_instance   |    <0.001 |
+|     MUX_Product42_impl_0_instance   |    <0.001 |
+|     MUX_Product42_impl_1_instance   |     0.001 |
+|     MUX_Product48_impl_1_instance   |     0.001 |
+|     MUX_Product49_impl_1_instance   |     0.001 |
+|     MUX_Product4_impl_1_instance    |     0.001 |
+|     MUX_Product50_impl_0_instance   |    <0.001 |
+|     MUX_Product50_impl_1_instance   |     0.001 |
+|     MUX_Product51_impl_1_instance   |     0.001 |
+|     MUX_Product52_impl_0_instance   |    <0.001 |
+|     MUX_Product52_impl_1_instance   |     0.001 |
+|     MUX_Product54_impl_1_instance   |     0.001 |
+|     MUX_Product55_impl_0_instance   |    <0.001 |
+|     MUX_Product55_impl_1_instance   |     0.001 |
+|     MUX_Product5_impl_1_instance    |     0.001 |
+|     MUX_Product6_impl_0_instance    |    <0.001 |
+|     MUX_Product7_impl_0_instance    |    <0.001 |
+|     MUX_Product8_impl_1_instance    |    <0.001 |
+|     MUX_Product9_impl_1_instance    |     0.001 |
+|     MUX_Subtract112_impl_0_instance |     0.001 |
+|     MUX_Subtract112_impl_1_instance |    <0.001 |
+|     MUX_Subtract113_impl_0_instance |    <0.001 |
+|     MUX_Subtract113_impl_1_instance |     0.001 |
+|     MUX_Subtract114_impl_0_instance |     0.001 |
+|     MUX_Subtract114_impl_1_instance |     0.001 |
+|     MUX_Subtract115_impl_0_instance |    <0.001 |
+|     MUX_Subtract115_impl_1_instance |     0.001 |
+|     MUX_Subtract116_impl_0_instance |     0.001 |
+|     MUX_Subtract116_impl_1_instance |    <0.001 |
+|     MUX_Subtract117_impl_0_instance |     0.001 |
+|     MUX_Subtract117_impl_1_instance |    <0.001 |
+|     MUX_Subtract132_impl_0_instance |     0.001 |
+|     MUX_Subtract132_impl_1_instance |     0.001 |
+|     MUX_Subtract14_impl_0_instance  |     0.001 |
+|     MUX_Subtract14_impl_1_instance  |     0.001 |
+|     MUX_Subtract20_impl_0_instance  |    <0.001 |
+|     MUX_Subtract20_impl_1_instance  |    <0.001 |
+|     MUX_Subtract21_impl_0_instance  |    <0.001 |
+|     MUX_Subtract21_impl_1_instance  |    <0.001 |
+|     MUX_Subtract22_impl_0_instance  |     0.001 |
+|     MUX_Subtract22_impl_1_instance  |     0.001 |
+|     MUX_Subtract23_impl_0_instance  |    <0.001 |
+|     MUX_Subtract23_impl_1_instance  |     0.001 |
+|     MUX_Subtract24_impl_0_instance  |     0.001 |
+|     MUX_Subtract24_impl_1_instance  |     0.001 |
+|     MUX_Subtract26_impl_0_instance  |     0.001 |
+|     MUX_Subtract26_impl_1_instance  |     0.001 |
+|     MUX_Subtract27_impl_0_instance  |     0.001 |
+|     MUX_Subtract27_impl_1_instance  |     0.001 |
+|     MUX_Subtract29_impl_0_instance  |     0.001 |
+|     MUX_Subtract29_impl_1_instance  |     0.001 |
+|     MUX_Subtract2_impl_0_instance   |     0.001 |
+|     MUX_Subtract2_impl_1_instance   |     0.001 |
+|     MUX_Subtract33_impl_0_instance  |    <0.001 |
+|     MUX_Subtract33_impl_1_instance  |     0.001 |
+|     MUX_Subtract35_impl_0_instance  |     0.001 |
+|     MUX_Subtract35_impl_1_instance  |     0.001 |
+|     MUX_Subtract37_impl_0_instance  |     0.001 |
+|     MUX_Subtract37_impl_1_instance  |     0.001 |
+|     MUX_Subtract38_impl_0_instance  |    <0.001 |
+|     MUX_Subtract38_impl_1_instance  |    <0.001 |
+|     MUX_Subtract3_impl_0_instance   |     0.001 |
+|     MUX_Subtract3_impl_1_instance   |     0.001 |
+|     MUX_Subtract42_impl_0_instance  |    <0.001 |
+|     MUX_Subtract42_impl_1_instance  |     0.001 |
+|     MUX_Subtract4_impl_1_instance   |     0.001 |
+|     MUX_Subtract52_impl_0_instance  |     0.001 |
+|     MUX_Subtract52_impl_1_instance  |     0.001 |
+|     MUX_Subtract53_impl_0_instance  |     0.001 |
+|     MUX_Subtract53_impl_1_instance  |     0.001 |
+|     MUX_Subtract54_impl_0_instance  |    <0.001 |
+|     MUX_Subtract54_impl_1_instance  |     0.001 |
+|     MUX_Subtract55_impl_0_instance  |    <0.001 |
+|     MUX_Subtract55_impl_1_instance  |     0.001 |
+|     MUX_Subtract56_impl_0_instance  |     0.001 |
+|     MUX_Subtract56_impl_1_instance  |     0.001 |
+|     MUX_Subtract57_impl_0_instance  |     0.001 |
+|     MUX_Subtract57_impl_1_instance  |    <0.001 |
+|     MUX_Subtract5_impl_0_instance   |     0.001 |
+|     MUX_Subtract5_impl_1_instance   |     0.001 |
+|     MUX_Subtract6_impl_0_instance   |    <0.001 |
+|     MUX_Subtract6_impl_1_instance   |     0.001 |
+|     MUX_Subtract74_impl_0_instance  |     0.001 |
+|     MUX_Subtract74_impl_1_instance  |     0.001 |
+|     MUX_Subtract7_impl_0_instance   |     0.001 |
+|     MUX_Subtract7_impl_1_instance   |     0.001 |
+|     MUX_Subtract8_impl_0_instance   |     0.001 |
+|     MUX_Subtract8_impl_1_instance   |     0.001 |
+|     MUX_Subtract9_impl_0_instance   |     0.001 |
+|     MUX_Subtract9_impl_1_instance   |     0.001 |
+|     ModCount31_instance             |     0.121 |
+|     Product10_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product114_impl_instance        |     0.006 |
+|       SignificandMultiplication     |     0.004 |
+|     Product11_impl_instance         |     0.004 |
+|       SignificandMultiplication     |     0.003 |
+|     Product120_impl_instance        |     0.004 |
+|       SignificandMultiplication     |     0.003 |
+|     Product121_impl_instance        |     0.006 |
+|       SignificandMultiplication     |     0.004 |
+|     Product122_impl_instance        |     0.008 |
+|       SignificandMultiplication     |     0.005 |
+|     Product123_impl_instance        |     0.007 |
+|       SignificandMultiplication     |     0.004 |
+|     Product124_impl_instance        |     0.009 |
+|       SignificandMultiplication     |     0.006 |
+|     Product126_impl_instance        |     0.006 |
+|       SignificandMultiplication     |     0.004 |
+|     Product127_impl_instance        |     0.009 |
+|       SignificandMultiplication     |     0.006 |
+|     Product12_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.004 |
+|     Product13_impl_instance         |     0.008 |
+|       SignificandMultiplication     |     0.005 |
+|     Product14_impl_instance         |     0.008 |
+|       SignificandMultiplication     |     0.005 |
+|     Product15_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.004 |
+|     Product16_impl_instance         |     0.008 |
+|       SignificandMultiplication     |     0.006 |
+|     Product17_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product18_impl_instance         |     0.008 |
+|       SignificandMultiplication     |     0.006 |
+|     Product19_impl_instance         |     0.008 |
+|       SignificandMultiplication     |     0.006 |
+|     Product213_impl_instance        |     0.004 |
+|       SignificandMultiplication     |     0.003 |
+|     Product219_impl_instance        |     0.005 |
+|       SignificandMultiplication     |     0.004 |
+|     Product21_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product220_impl_instance        |     0.006 |
+|       SignificandMultiplication     |     0.004 |
+|     Product221_impl_instance        |     0.008 |
+|       SignificandMultiplication     |     0.005 |
+|     Product222_impl_instance        |     0.006 |
+|       SignificandMultiplication     |     0.004 |
+|     Product223_impl_instance        |     0.008 |
+|       SignificandMultiplication     |     0.006 |
+|     Product225_impl_instance        |     0.006 |
+|       SignificandMultiplication     |     0.004 |
+|     Product226_impl_instance        |     0.008 |
+|       SignificandMultiplication     |     0.006 |
+|     Product22_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.004 |
+|     Product23_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product24_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product25_impl_instance         |     0.004 |
+|       SignificandMultiplication     |     0.003 |
+|     Product26_impl_instance         |     0.009 |
+|       SignificandMultiplication     |     0.006 |
+|     Product27_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product28_impl_instance         |     0.008 |
+|       SignificandMultiplication     |     0.005 |
+|     Product313_impl_instance        |     0.006 |
+|       SignificandMultiplication     |     0.004 |
+|     Product319_impl_instance        |     0.005 |
+|       SignificandMultiplication     |     0.004 |
+|     Product31_impl_instance         |     0.008 |
+|       SignificandMultiplication     |     0.005 |
+|     Product320_impl_instance        |     0.006 |
+|       SignificandMultiplication     |     0.003 |
+|     Product321_impl_instance        |     0.009 |
+|       SignificandMultiplication     |     0.006 |
+|     Product322_impl_instance        |     0.007 |
+|       SignificandMultiplication     |     0.004 |
+|     Product323_impl_instance        |     0.009 |
+|       SignificandMultiplication     |     0.006 |
+|     Product325_impl_instance        |     0.005 |
+|       SignificandMultiplication     |     0.004 |
+|     Product326_impl_instance        |     0.009 |
+|       SignificandMultiplication     |     0.007 |
+|     Product32_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product33_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product34_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product35_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product36_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product37_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product38_impl_instance         |     0.008 |
+|       SignificandMultiplication     |     0.006 |
+|     Product42_impl_instance         |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product48_impl_instance         |     0.006 |
+|       SignificandMultiplication     |     0.004 |
+|     Product49_impl_instance         |     0.006 |
+|       SignificandMultiplication     |     0.004 |
+|     Product4_impl_instance          |     0.004 |
+|       SignificandMultiplication     |     0.003 |
+|     Product50_impl_instance         |     0.008 |
+|       SignificandMultiplication     |     0.005 |
+|     Product51_impl_instance         |     0.004 |
+|       SignificandMultiplication     |     0.003 |
+|     Product52_impl_instance         |     0.008 |
+|       SignificandMultiplication     |     0.006 |
+|     Product54_impl_instance         |     0.004 |
+|       SignificandMultiplication     |     0.003 |
+|     Product55_impl_instance         |     0.009 |
+|       SignificandMultiplication     |     0.006 |
+|     Product5_impl_instance          |     0.004 |
+|       SignificandMultiplication     |     0.003 |
+|     Product6_impl_instance          |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product7_impl_instance          |     0.007 |
+|       SignificandMultiplication     |     0.005 |
+|     Product8_impl_instance          |     0.005 |
+|       SignificandMultiplication     |     0.003 |
+|     Product9_impl_instance          |     0.008 |
+|       SignificandMultiplication     |     0.005 |
+|     SharedReg100_instance           |     0.002 |
+|     SharedReg101_instance           |     0.004 |
+|     SharedReg102_instance           |     0.007 |
+|     SharedReg103_instance           |     0.007 |
+|     SharedReg104_instance           |     0.002 |
+|     SharedReg105_instance           |     0.003 |
+|     SharedReg106_instance           |     0.003 |
+|     SharedReg107_instance           |     0.001 |
+|     SharedReg108_instance           |     0.004 |
+|     SharedReg109_instance           |     0.005 |
+|     SharedReg10_instance            |    <0.001 |
+|     SharedReg110_instance           |     0.002 |
+|     SharedReg111_instance           |    <0.001 |
+|     SharedReg112_instance           |     0.003 |
+|     SharedReg113_instance           |     0.003 |
+|     SharedReg114_instance           |     0.005 |
+|     SharedReg115_instance           |     0.002 |
+|     SharedReg116_instance           |     0.001 |
+|     SharedReg117_instance           |     0.003 |
+|     SharedReg118_instance           |     0.003 |
+|     SharedReg119_instance           |     0.004 |
+|     SharedReg11_instance            |    <0.001 |
+|     SharedReg120_instance           |     0.004 |
+|     SharedReg121_instance           |     0.002 |
+|     SharedReg122_instance           |     0.002 |
+|     SharedReg123_instance           |     0.004 |
+|     SharedReg124_instance           |     0.004 |
+|     SharedReg125_instance           |     0.004 |
+|     SharedReg126_instance           |     0.001 |
+|     SharedReg127_instance           |     0.003 |
+|     SharedReg128_instance           |     0.004 |
+|     SharedReg129_instance           |     0.003 |
+|     SharedReg12_instance            |    <0.001 |
+|     SharedReg130_instance           |     0.006 |
+|     SharedReg131_instance           |     0.003 |
+|     SharedReg132_instance           |     0.008 |
+|     SharedReg133_instance           |     0.002 |
+|     SharedReg134_instance           |     0.003 |
+|     SharedReg135_instance           |     0.004 |
+|     SharedReg136_instance           |     0.002 |
+|     SharedReg137_instance           |     0.006 |
+|     SharedReg138_instance           |     0.003 |
+|     SharedReg139_instance           |     0.007 |
+|     SharedReg13_instance            |    <0.001 |
+|     SharedReg140_instance           |     0.002 |
+|     SharedReg141_instance           |     0.003 |
+|     SharedReg142_instance           |     0.003 |
+|     SharedReg143_instance           |     0.004 |
+|     SharedReg144_instance           |     0.005 |
+|     SharedReg145_instance           |     0.006 |
+|     SharedReg146_instance           |     0.002 |
+|     SharedReg147_instance           |     0.004 |
+|     SharedReg148_instance           |     0.005 |
+|     SharedReg149_instance           |     0.003 |
+|     SharedReg14_instance            |    <0.001 |
+|     SharedReg150_instance           |     0.007 |
+|     SharedReg151_instance           |     0.007 |
+|     SharedReg152_instance           |     0.008 |
+|     SharedReg153_instance           |     0.002 |
+|     SharedReg154_instance           |     0.005 |
+|     SharedReg155_instance           |     0.007 |
+|     SharedReg156_instance           |     0.002 |
+|     SharedReg157_instance           |     0.004 |
+|     SharedReg158_instance           |     0.005 |
+|     SharedReg159_instance           |     0.007 |
+|     SharedReg15_instance            |    <0.001 |
+|     SharedReg160_instance           |     0.005 |
+|     SharedReg161_instance           |     0.004 |
+|     SharedReg162_instance           |     0.006 |
+|     SharedReg163_instance           |     0.007 |
+|     SharedReg164_instance           |     0.003 |
+|     SharedReg165_instance           |     0.002 |
+|     SharedReg166_instance           |     0.005 |
+|     SharedReg167_instance           |     0.002 |
+|     SharedReg168_instance           |     0.002 |
+|     SharedReg169_instance           |     0.003 |
+|     SharedReg16_instance            |    <0.001 |
+|     SharedReg170_instance           |     0.005 |
+|     SharedReg171_instance           |     0.006 |
+|     SharedReg172_instance           |     0.005 |
+|     SharedReg173_instance           |     0.003 |
+|     SharedReg174_instance           |     0.004 |
+|     SharedReg175_instance           |     0.003 |
+|     SharedReg176_instance           |     0.004 |
+|     SharedReg177_instance           |     0.004 |
+|     SharedReg178_instance           |     0.005 |
+|     SharedReg179_instance           |     0.005 |
+|     SharedReg17_instance            |    <0.001 |
+|     SharedReg180_instance           |     0.001 |
+|     SharedReg181_instance           |     0.002 |
+|     SharedReg182_instance           |    <0.001 |
+|     SharedReg186_instance           |    <0.001 |
+|     SharedReg187_instance           |    <0.001 |
+|     SharedReg188_instance           |    <0.001 |
+|     SharedReg189_instance           |    <0.001 |
+|     SharedReg18_instance            |    <0.001 |
+|     SharedReg192_instance           |    <0.001 |
+|     SharedReg193_instance           |    <0.001 |
+|     SharedReg194_instance           |    <0.001 |
+|     SharedReg195_instance           |     0.001 |
+|     SharedReg197_instance           |    <0.001 |
+|     SharedReg198_instance           |    <0.001 |
+|     SharedReg19_instance            |    <0.001 |
+|     SharedReg1_instance             |    <0.001 |
+|     SharedReg20_instance            |    <0.001 |
+|     SharedReg214_instance           |    <0.001 |
+|     SharedReg215_instance           |    <0.001 |
+|     SharedReg21_instance            |    <0.001 |
+|     SharedReg226_instance           |    <0.001 |
+|     SharedReg22_instance            |    <0.001 |
+|     SharedReg231_instance           |    <0.001 |
+|     SharedReg234_instance           |    <0.001 |
+|     SharedReg239_instance           |    <0.001 |
+|     SharedReg23_instance            |    <0.001 |
+|     SharedReg24_instance            |    <0.001 |
+|     SharedReg25_instance            |    <0.001 |
+|     SharedReg26_instance            |    <0.001 |
+|     SharedReg276_instance           |    <0.001 |
+|     SharedReg277_instance           |    <0.001 |
+|     SharedReg27_instance            |    <0.001 |
+|     SharedReg28_instance            |    <0.001 |
+|     SharedReg29_instance            |    <0.001 |
+|     SharedReg2_instance             |    <0.001 |
+|     SharedReg30_instance            |    <0.001 |
+|     SharedReg31_instance            |    <0.001 |
+|     SharedReg32_instance            |     0.005 |
+|     SharedReg33_instance            |     0.006 |
+|     SharedReg34_instance            |     0.007 |
+|     SharedReg35_instance            |     0.006 |
+|     SharedReg36_instance            |     0.005 |
+|     SharedReg37_instance            |     0.005 |
+|     SharedReg38_instance            |     0.002 |
+|     SharedReg39_instance            |     0.004 |
+|     SharedReg3_instance             |    <0.001 |
+|     SharedReg40_instance            |     0.005 |
+|     SharedReg41_instance            |     0.004 |
+|     SharedReg42_instance            |     0.004 |
+|     SharedReg43_instance            |     0.007 |
+|     SharedReg44_instance            |     0.004 |
+|     SharedReg45_instance            |     0.004 |
+|     SharedReg46_instance            |     0.005 |
+|     SharedReg47_instance            |     0.003 |
+|     SharedReg48_instance            |     0.003 |
+|     SharedReg49_instance            |     0.005 |
+|     SharedReg4_instance             |    <0.001 |
+|     SharedReg50_instance            |     0.006 |
+|     SharedReg51_instance            |     0.006 |
+|     SharedReg52_instance            |     0.004 |
+|     SharedReg53_instance            |     0.005 |
+|     SharedReg54_instance            |     0.005 |
+|     SharedReg55_instance            |     0.006 |
+|     SharedReg56_instance            |     0.006 |
+|     SharedReg57_instance            |     0.007 |
+|     SharedReg58_instance            |     0.007 |
+|     SharedReg59_instance            |     0.007 |
+|     SharedReg5_instance             |    <0.001 |
+|     SharedReg60_instance            |     0.003 |
+|     SharedReg61_instance            |     0.003 |
+|     SharedReg62_instance            |     0.002 |
+|     SharedReg63_instance            |     0.003 |
+|     SharedReg64_instance            |     0.006 |
+|     SharedReg65_instance            |     0.002 |
+|     SharedReg66_instance            |     0.004 |
+|     SharedReg67_instance            |     0.004 |
+|     SharedReg68_instance            |     0.003 |
+|     SharedReg69_instance            |     0.008 |
+|     SharedReg6_instance             |    <0.001 |
+|     SharedReg70_instance            |     0.003 |
+|     SharedReg71_instance            |     0.003 |
+|     SharedReg72_instance            |     0.004 |
+|     SharedReg73_instance            |     0.005 |
+|     SharedReg74_instance            |     0.005 |
+|     SharedReg75_instance            |     0.002 |
+|     SharedReg76_instance            |     0.003 |
+|     SharedReg77_instance            |     0.002 |
+|     SharedReg78_instance            |     0.003 |
+|     SharedReg79_instance            |     0.004 |
+|     SharedReg7_instance             |    <0.001 |
+|     SharedReg80_instance            |     0.006 |
+|     SharedReg81_instance            |     0.001 |
+|     SharedReg82_instance            |     0.002 |
+|     SharedReg83_instance            |     0.004 |
+|     SharedReg84_instance            |     0.001 |
+|     SharedReg85_instance            |     0.003 |
+|     SharedReg86_instance            |     0.006 |
+|     SharedReg87_instance            |    <0.001 |
+|     SharedReg88_instance            |     0.002 |
+|     SharedReg89_instance            |     0.002 |
+|     SharedReg8_instance             |    <0.001 |
+|     SharedReg90_instance            |     0.002 |
+|     SharedReg91_instance            |     0.004 |
+|     SharedReg92_instance            |     0.005 |
+|     SharedReg93_instance            |     0.003 |
+|     SharedReg94_instance            |     0.004 |
+|     SharedReg95_instance            |     0.004 |
+|     SharedReg96_instance            |     0.005 |
+|     SharedReg97_instance            |     0.005 |
+|     SharedReg98_instance            |     0.004 |
+|     SharedReg99_instance            |     0.004 |
+|     SharedReg9_instance             |    <0.001 |
+|     SharedReg_instance              |    <0.001 |
+|     Subtract112_impl_instance       |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract113_impl_instance       |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract114_impl_instance       |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract115_impl_instance       |     0.010 |
+|       FPAddSubOp_instance           |     0.010 |
+|         LZC_component               |     0.005 |
+|         fracAdder                   |     0.001 |
+|     Subtract116_impl_instance       |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract117_impl_instance       |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract132_impl_instance       |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract135_impl_instance       |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract14_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract20_impl_instance        |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract21_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract22_impl_instance        |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract23_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract24_impl_instance        |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract26_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |    <0.001 |
+|     Subtract27_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract29_impl_instance        |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract2_impl_instance         |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract33_impl_instance        |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract35_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract37_impl_instance        |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract38_impl_instance        |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract3_impl_instance         |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract42_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract4_impl_instance         |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract52_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract53_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.005 |
+|         fracAdder                   |     0.001 |
+|     Subtract54_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract55_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract56_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract57_impl_instance        |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract5_impl_instance         |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract6_impl_instance         |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract74_impl_instance        |     0.008 |
+|       FPAddSubOp_instance           |     0.008 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract75_impl_instance        |     0.010 |
+|       FPAddSubOp_instance           |     0.010 |
+|         LZC_component               |     0.005 |
+|         fracAdder                   |     0.001 |
+|     Subtract7_impl_instance         |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract8_impl_instance         |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     Subtract9_impl_instance         |     0.009 |
+|       FPAddSubOp_instance           |     0.009 |
+|         LZC_component               |     0.004 |
+|         fracAdder                   |     0.001 |
+|     x0_im_instance                  |    <0.001 |
+|     x0_re_instance                  |    <0.001 |
+|     x10_im_instance                 |    <0.001 |
+|     x10_re_instance                 |    <0.001 |
+|     x11_im_instance                 |    <0.001 |
+|     x11_re_instance                 |    <0.001 |
+|     x12_im_instance                 |    <0.001 |
+|     x12_re_instance                 |    <0.001 |
+|     x13_im_instance                 |    <0.001 |
+|     x13_re_instance                 |    <0.001 |
+|     x14_im_instance                 |    <0.001 |
+|     x14_re_instance                 |    <0.001 |
+|     x15_im_instance                 |    <0.001 |
+|     x1_im_instance                  |    <0.001 |
+|     x1_re_instance                  |    <0.001 |
+|     x2_im_instance                  |    <0.001 |
+|     x2_re_instance                  |    <0.001 |
+|     x3_im_instance                  |    <0.001 |
+|     x3_re_instance                  |    <0.001 |
+|     x4_im_instance                  |    <0.001 |
+|     x4_re_instance                  |    <0.001 |
+|     x5_im_instance                  |    <0.001 |
+|     x5_re_instance                  |    <0.001 |
+|     x6_im_instance                  |    <0.001 |
+|     x6_re_instance                  |    <0.001 |
+|     x7_im_instance                  |    <0.001 |
+|     x7_re_instance                  |    <0.001 |
+|     x8_im_instance                  |    <0.001 |
+|     x8_re_instance                  |    <0.001 |
+|     x9_im_instance                  |    <0.001 |
+|     x9_re_instance                  |    <0.001 |
+|     y0_re_instance                  |     0.001 |
+|     y10_im_instance                 |    <0.001 |
+|     y10_re_instance                 |    <0.001 |
+|     y11_im_instance                 |    <0.001 |
+|     y12_im_instance                 |    <0.001 |
+|     y13_re_instance                 |    <0.001 |
+|     y14_im_instance                 |    <0.001 |
+|     y14_re_instance                 |    <0.001 |
+|     y15_im_instance                 |    <0.001 |
+|     y15_re_instance                 |    <0.001 |
+|     y1_im_instance                  |    <0.001 |
+|     y1_re_instance                  |    <0.001 |
+|     y2_im_instance                  |    <0.001 |
+|     y2_re_instance                  |    <0.001 |
+|     y3_im_instance                  |    <0.001 |
+|     y3_re_instance                  |    <0.001 |
+|     y4_im_instance                  |    <0.001 |
+|     y4_re_instance                  |    <0.001 |
+|     y5_im_instance                  |    <0.001 |
+|     y5_re_instance                  |    <0.001 |
+|     y6_re_instance                  |    <0.001 |
+|     y7_im_instance                  |    <0.001 |
+|     y7_re_instance                  |    <0.001 |
+|     y8_im_instance                  |    <0.001 |
+|     y9_im_instance                  |    <0.001 |
+|   clk_IBUF_inst                     |    <0.001 |
+|   output_select_IBUF[0]_inst        |    <0.001 |
+|   output_select_IBUF[1]_inst        |    <0.001 |
+|   output_select_IBUF[2]_inst        |    <0.001 |
+|   output_select_IBUF[3]_inst        |    <0.001 |
+|   output_select_IBUF[4]_inst        |    <0.001 |
+|   rst_IBUF_inst                     |    <0.001 |
+|   shared_input_IBUF[0]_inst         |    <0.001 |
+|   shared_input_IBUF[10]_inst        |    <0.001 |
+|   shared_input_IBUF[11]_inst        |    <0.001 |
+|   shared_input_IBUF[12]_inst        |    <0.001 |
+|   shared_input_IBUF[13]_inst        |    <0.001 |
+|   shared_input_IBUF[14]_inst        |    <0.001 |
+|   shared_input_IBUF[15]_inst        |    <0.001 |
+|   shared_input_IBUF[16]_inst        |    <0.001 |
+|   shared_input_IBUF[17]_inst        |    <0.001 |
+|   shared_input_IBUF[18]_inst        |    <0.001 |
+|   shared_input_IBUF[19]_inst        |    <0.001 |
+|   shared_input_IBUF[1]_inst         |    <0.001 |
+|   shared_input_IBUF[20]_inst        |    <0.001 |
+|   shared_input_IBUF[21]_inst        |    <0.001 |
+|   shared_input_IBUF[22]_inst        |    <0.001 |
+|   shared_input_IBUF[23]_inst        |    <0.001 |
+|   shared_input_IBUF[24]_inst        |    <0.001 |
+|   shared_input_IBUF[25]_inst        |    <0.001 |
+|   shared_input_IBUF[26]_inst        |    <0.001 |
+|   shared_input_IBUF[27]_inst        |    <0.001 |
+|   shared_input_IBUF[28]_inst        |    <0.001 |
+|   shared_input_IBUF[29]_inst        |    <0.001 |
+|   shared_input_IBUF[2]_inst         |    <0.001 |
+|   shared_input_IBUF[30]_inst        |    <0.001 |
+|   shared_input_IBUF[31]_inst        |    <0.001 |
+|   shared_input_IBUF[3]_inst         |    <0.001 |
+|   shared_input_IBUF[4]_inst         |    <0.001 |
+|   shared_input_IBUF[5]_inst         |    <0.001 |
+|   shared_input_IBUF[6]_inst         |    <0.001 |
+|   shared_input_IBUF[7]_inst         |    <0.001 |
+|   shared_input_IBUF[8]_inst         |    <0.001 |
+|   shared_input_IBUF[9]_inst         |    <0.001 |
+|   x0_im_enable_IBUF_inst            |    <0.001 |
+|   x0_re_enable_IBUF_inst            |    <0.001 |
+|   x10_im_enable_IBUF_inst           |    <0.001 |
+|   x10_re_enable_IBUF_inst           |    <0.001 |
+|   x11_im_enable_IBUF_inst           |    <0.001 |
+|   x11_re_enable_IBUF_inst           |    <0.001 |
+|   x12_im_enable_IBUF_inst           |    <0.001 |
+|   x12_re_enable_IBUF_inst           |    <0.001 |
+|   x13_im_enable_IBUF_inst           |    <0.001 |
+|   x13_re_enable_IBUF_inst           |    <0.001 |
+|   x14_im_enable_IBUF_inst           |    <0.001 |
+|   x14_re_enable_IBUF_inst           |    <0.001 |
+|   x15_im_enable_IBUF_inst           |    <0.001 |
+|   x15_re_enable_IBUF_inst           |    <0.001 |
+|   x1_im_enable_IBUF_inst            |    <0.001 |
+|   x1_re_enable_IBUF_inst            |    <0.001 |
+|   x2_im_enable_IBUF_inst            |    <0.001 |
+|   x2_re_enable_IBUF_inst            |    <0.001 |
+|   x3_im_enable_IBUF_inst            |    <0.001 |
+|   x3_re_enable_IBUF_inst            |    <0.001 |
+|   x4_im_enable_IBUF_inst            |    <0.001 |
+|   x4_re_enable_IBUF_inst            |    <0.001 |
+|   x5_im_enable_IBUF_inst            |    <0.001 |
+|   x5_re_enable_IBUF_inst            |    <0.001 |
+|   x6_im_enable_IBUF_inst            |    <0.001 |
+|   x6_re_enable_IBUF_inst            |    <0.001 |
+|   x7_im_enable_IBUF_inst            |    <0.001 |
+|   x7_re_enable_IBUF_inst            |    <0.001 |
+|   x8_im_enable_IBUF_inst            |    <0.001 |
+|   x8_re_enable_IBUF_inst            |    <0.001 |
+|   x9_im_enable_IBUF_inst            |    <0.001 |
+|   x9_re_enable_IBUF_inst            |    <0.001 |
++-------------------------------------+-----------+
+
+

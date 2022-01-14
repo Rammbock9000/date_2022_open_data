@@ -1,0 +1,87 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date              : Tue Nov 30 23:12:55 2021
+| Host              : animal.digi.e-technik.uni-kassel.de running 64-bit AlmaLinux release 8.4 (Electric Cheetah)
+| Command           : report_timing -file /home/nfiege/Repositories/origami/vhdl/ratII/synth/mat_inv/UniformILPNew/mat_inv_UniformILPNew_33_wrapper_ultrascale2_250/implementedSystem_toplevel_wrapper_timing_synth.rpt
+| Design            : implementedSystem_toplevel_wrapper
+| Device            : xcvu13p-fhga2104
+| Speed File        : -2  PRODUCTION 1.19 03-17-2018
+| Temperature Grade : E
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.145ns  (required time - arrival time)
+  Source:                 DUT/SharedReg458_instance/s12_reg_c/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            DUT/SharedReg39_instance/Y_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        3.582ns  (logic 0.168ns (4.690%)  route 3.414ns (95.310%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.263ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.193ns = ( 6.193 - 4.000 ) 
+    Source Clock Delay      (SCD):    2.811ns
+    Clock Pessimism Removal (CPR):    0.356ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.874ns (routing 0.711ns, distribution 1.163ns)
+  Clock Net Delay (Destination): 1.546ns (routing 0.646ns, distribution 0.900ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    AR14                                              0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    AR14                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.586     0.586 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.586    clk_IBUF_inst/OUT
+    AR14                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.586 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.323     0.909    clk_IBUF
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.937 r  clk_IBUF_BUFG_inst/O
+    X4Y6 (CLOCK_ROOT)    net (fo=49283, routed)       1.874     2.811    DUT/SharedReg458_instance/clk_IBUF_BUFG
+    SLICE_X149Y446       FDCE                                         r  DUT/SharedReg458_instance/s12_reg_c/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X149Y446       FDCE (Prop_HFF2_SLICEM_C_Q)
+                                                      0.078     2.889 r  DUT/SharedReg458_instance/s12_reg_c/Q
+                         net (fo=273, routed)         3.365     6.254    DUT/SharedReg39_instance/s12_reg_c
+    SLICE_X127Y373       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.090     6.344 r  DUT/SharedReg39_instance/s12_reg_gate__30/O
+                         net (fo=1, routed)           0.049     6.393    DUT/SharedReg39_instance/s12_reg_gate__30_n_0
+    SLICE_X127Y373       FDCE                                         r  DUT/SharedReg39_instance/Y_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+    AR14                                              0.000     4.000 r  clk (IN)
+                         net (fo=0)                   0.000     4.000    clk_IBUF_inst/I
+    AR14                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.336     4.336 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     4.336    clk_IBUF_inst/OUT
+    AR14                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     4.336 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.287     4.623    clk_IBUF
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.647 r  clk_IBUF_BUFG_inst/O
+    X4Y6 (CLOCK_ROOT)    net (fo=49283, routed)       1.546     6.193    DUT/SharedReg39_instance/clk_IBUF_BUFG
+    SLICE_X127Y373       FDCE                                         r  DUT/SharedReg39_instance/Y_reg[2]/C
+                         clock pessimism              0.356     6.548    
+                         clock uncertainty           -0.035     6.513    
+    SLICE_X127Y373       FDCE (Setup_BFF_SLICEL_C_D)
+                                                      0.025     6.538    DUT/SharedReg39_instance/Y_reg[2]
+  -------------------------------------------------------------------
+                         required time                          6.538    
+                         arrival time                          -6.393    
+  -------------------------------------------------------------------
+                         slack                                  0.145    
+
+
+
+
