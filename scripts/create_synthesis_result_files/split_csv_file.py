@@ -1,5 +1,5 @@
 def main():
-  delim = ';'
+	delim = ';'
 
 	base_path = '../../synth_results/synth_raw/'
 

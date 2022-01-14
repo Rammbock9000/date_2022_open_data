@@ -99,7 +99,7 @@ The \testname{r-2 FFT} benchmark instance belongs to the right y-axis; all other
   \newcommand\mkplot[5]{
     \addplot[ybar, draw=black, fill=#1]
       plot [error bars/.cd, y dir=both, y explicit]
-      table [x expr = \coordindex, y=#2, y error minus=#3, y error plus=#4, col sep=semicolon] {../synth_results/energy_plot/eps_savings_5.csv};
+      table [x expr = \coordindex, y=#2, y error minus=#3, y error plus=#4, col sep=semicolon] {../synth_results/energy_plot/eps_savings_5-0.csv};
     \addlegendentryexpanded{#5};
   }
   \mkplot{c0}{uniformAvg}{uniformMinus}{uniformPlus}{prop. exact uniform}
