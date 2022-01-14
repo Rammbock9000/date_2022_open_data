@@ -80,7 +80,7 @@ def get_II(scheduler, model, index, rat_II_sched_files_base, int_II_sched_files_
   except:
     return None, None, None, None
 
-if __name__=='__main__':
+def main():
 	analyze_me = '../../synth_results/synth_raw/synthesis_results_raw.csv'
 	tp_file = '../../synth_results/synth_raw/synth_detailed.csv'
 	rat_II_sched_files_base = '../../rat_II_schedules'
@@ -126,3 +126,7 @@ if __name__=='__main__':
 			DSPs = int(elements[4])
 			RU = LUTs + N*DSPs
 			t.write('{:.2f};{};{};{:2f};{}'.format(II,S,M,float(elements[5])/II,RU))
+  
+
+if __name__=='__main__':
+  main()

@@ -1,5 +1,5 @@
-if __name__=='__main__':
-	delim = ';'
+def main():
+  delim = ';'
 
 	base_path = '../../synth_results/synth_raw/'
 
@@ -38,3 +38,6 @@ if __name__=='__main__':
 			fw.write(line)
 			last_model = model
 			last_scheduler = scheduler
+
+if __name__=='__main__':
+	main()

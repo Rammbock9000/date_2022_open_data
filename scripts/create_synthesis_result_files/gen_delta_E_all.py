@@ -1,11 +1,18 @@
-from create_eps_files import do_it as preprocess
+from create_throughput_csv import main as gen_tp_csv
+from split_csv_file import main as split_csv
+from create_eps_files import do_it as gen_eps_files
 from gen_EPS_savings import do_it as gen_delta_E_csv_file
 
 def main():
-    # setup
+    # generate csv files from synthesis results
+    gen_tp_csv()
+    split_csv()
+    
+    # limitations on M, S and M/speedup
     max_M = float('inf')
     max_S = float('inf')
     max_quots = [x*0.5+2.0 for x in range(1, 20)] + [float('inf')]
+
     # number of allocations for different quotients
     # these values can be obtained by analyzing graph and resource model
     # for all scheduling problems
@@ -38,7 +45,7 @@ def main():
     
     # loop over all setups
     for max_quot in max_quots:
-        preprocess(max_M, max_S, max_quot)
+        gen_eps_files(max_M, max_S, max_quot)
         if max_quot == float('inf'):
             scale_FFT = True
         else:
