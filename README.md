@@ -41,4 +41,4 @@ scripts:
 5) navigate into "scripts/create_synthesis_result_files"
 6) execute (in order): "analyze_synthesis_results.sh", "gen_delta_E_all.py" to generate data for Figures 3-8 from the paper
 7) navigate into "tex" and build "main.tex" to generate a PDF file with all relevant tables and figures
-8) we created Table III without any scripts but you can extract all data from the synthesis results stored in the .csv files in directory "synth_results/energy_plot" (i.e., fir_SHI_XXX_EPS_OPT.csv)
+8) we created Table III without any scripts but you can extract all data from the synthesis results stored in the .csv files in directory "synth_results/energy_plot" (i.e., fir_SHI_XXX_EPS_OPT.csv) and from the report files in directory "rat_II_non_optimal_II"
