@@ -86,7 +86,7 @@ def calc_energy_per_sample(csv_file_prefix, scheduler):
                 f.write(line_t + ';energyPerSample;powerResourceProduct;EPSResourceProduct;EPSSavings\n')
 
 
-def filter_non_optimal(csv_file_prefix, scheduler):
+def filter_non_optimal(csv_file_prefix, scheduler, all_IIs):
     lines = None
     try:
       with open(f'../../synth_results/energy_plot/{csv_file_prefix}_EPS.csv', 'r') as f:
@@ -103,10 +103,11 @@ def filter_non_optimal(csv_file_prefix, scheduler):
             try:
                 elements = split_line(line, ';')
                 II = float(elements[11])
-                if scheduler == 'ED97':
-                    RU = float(elements[13])
-                else:
-                    RU = float(elements[15])
+                #if scheduler == 'ED97':
+                #    RU = float(elements[13])
+                #else:
+                #    RU = float(elements[15])
+                RU = float(elements[15])
                 # check if this implementation is pareto optimal
                 paretoOpt = True
                 # skip header line
@@ -117,12 +118,16 @@ def filter_non_optimal(csv_file_prefix, scheduler):
                         continue
                     elements2 = split_line(line2, ';')
                     II2 = float(elements2[11])
-                    if scheduler == 'ED97':
-                        RU2 = float(elements2[13])
-                    else:
-                        RU2 = float(elements2[15])
+                    #if scheduler == 'ED97':
+                    #    RU2 = float(elements2[13])
+                    #else:
+                    #    RU2 = float(elements2[15])
+                    RU2 = float(elements2[15])
                     # check pareto optimality
-                    if RU > RU2 and II >= II2:
+                    if all_IIs and RU > RU2 and II == II2:
+                        paretoOpt = False
+                        break
+                    if (not all_IIs) and RU > RU2 and II >= II2:
                         paretoOpt = False
                         break
                 # skip non-pareto-opt implementations
@@ -134,7 +139,7 @@ def filter_non_optimal(csv_file_prefix, scheduler):
                 print("exception EPS->EPS_OPT")
                 continue
 
-def filter_non_optimal_ru(csv_file_prefix, scheduler, max_M, max_S, max_quot):
+def filter_non_optimal_ru(csv_file_prefix, scheduler, max_M, max_S, max_quot, all_IIs):
     lines = None
     n_tot = 0
     n_con = 0
@@ -153,10 +158,11 @@ def filter_non_optimal_ru(csv_file_prefix, scheduler, max_M, max_S, max_quot):
                 n_tot += 1
                 elements = split_line(line, ';')
                 II = float(elements[11])
-                if scheduler == 'ED97':
-                    RU = float(elements[13])
-                else:
-                    RU = float(elements[15])
+                #if scheduler == 'ED97':
+                #    RU = float(elements[13])
+                #else:
+                #    RU = float(elements[15])
+                RU = float(elements[15])
                 # check if we need to skip because of M/S bounds
                 if scheduler != 'ED97':
                     S = float(elements[12])
@@ -182,14 +188,17 @@ def filter_non_optimal_ru(csv_file_prefix, scheduler, max_M, max_S, max_quot):
                         continue
                     elements2 = split_line(line2, ';')
                     II2 = float(elements2[11])
-                    if scheduler == 'ED97':
-                        RU2 = float(elements2[13])
-                    else:
-                        RU2 = float(elements2[15])
+                    #if scheduler == 'ED97':
+                    #    RU2 = float(elements2[13])
+                    #else:
+                    #    RU2 = float(elements2[15])
+                    RU2 = float(elements[15])
                     # check if we need to skip because of M/S bounds
                     if scheduler != 'ED97':
+                        print("5")
                         S = float(elements[12])
                         M = float(elements[13])
+                        print("6")
                         intII = ceil(M/S)
                         if S > max_S:
                             continue
@@ -198,7 +207,10 @@ def filter_non_optimal_ru(csv_file_prefix, scheduler, max_M, max_S, max_quot):
                         if M*M / (S*intII) > max_quot:
                             continue
                     # check pareto optimality
-                    if (RU > RU2 and II >= II2) or (RU == RU2 and II == II2 and i>j):
+                    if (all_IIs) and ((RU > RU2 and II == II2) or (RU == RU2 and II == II2 and i>j)):
+                        paretoOpt = False
+                        break
+                    if (not all_IIs) and ((RU > RU2 and II >= II2) or (RU == RU2 and II == II2 and i>j)):
                         paretoOpt = False
                         break
                 # skip non-pareto-opt implementations
@@ -211,16 +223,31 @@ def filter_non_optimal_ru(csv_file_prefix, scheduler, max_M, max_S, max_quot):
                 continue
     return n_tot,n_con
 
+def gen_plots():
+    max_M = float('inf')
+    max_S = float('inf')
+    max_quot = float('inf')
+    schedulers = ['ED97', 'NonUniformILP', 'UniformILPNew']
+    model = 'fir_gen'
+    all_IIs = True
+    for scheduler in schedulers:
+        csv_file = f'{model}_{scheduler}'
+        calc_energy_per_sample(csv_file, scheduler)
+        filter_non_optimal(csv_file, scheduler,all_IIs)
+        filter_non_optimal_ru(csv_file, scheduler, max_M, max_S, max_quot,all_IIs)
+    
+
 def do_it(max_M, max_S, max_quot):
     schedulers = ['ED97', 'NonUniformILP', 'UniformILPNew']
     models = ['fir_gen', 'fir_GM', 'fir_hilb', 'fir_SAM', 'fir_SHI', 'fir_srg', 'iir_sos16', 'mat_inv', 'r2_FFT', 'rgb_tr', 'splin_pf', 'ycbcr_tr']
+    all_IIs = False
     for model in models:
         print(f"model: {model}")
         for scheduler in schedulers:
             csv_file = f'{model}_{scheduler}'
             calc_energy_per_sample(csv_file, scheduler)
-            filter_non_optimal(csv_file, scheduler)
-            filter_non_optimal_ru(csv_file, scheduler, max_M, max_S, max_quot)
+            filter_non_optimal(csv_file, scheduler,all_IIs)
+            filter_non_optimal_ru(csv_file, scheduler, max_M, max_S, max_quot,all_IIs)
 
 def main():
     max_M = float('inf')

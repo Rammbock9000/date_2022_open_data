@@ -89,9 +89,6 @@ def process(max_M,max_S,max_quot,new_file):
             if epsErrPlus < 0:
                 print(f'upper bound smaller than 0 - avg: {epsSavingsAvg}, min: {epsSavingsMax}')
 
-            # print results on console
-            # print(f'avg: {epsSavingsAvg}, min: {epsSavingsMin}, max: {epsSavingsMax}')
-
             # check if model already exists in summary file
             line_number = create_line_and_get_line_number(directory+new_file, model, models)
             with open(new_file, 'r') as f2:
