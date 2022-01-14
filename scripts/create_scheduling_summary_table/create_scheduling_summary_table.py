@@ -1,6 +1,4 @@
 import csv
-#import matplotlib.pyplot as plt
-#import numpy as np
 from collections import defaultdict
 import math
 import os
@@ -89,7 +87,7 @@ if __name__=='__main__':
 
     model_table_names={'vanDongen':'van dongen', 'fir_gen':'gen', 'fir_GM':'gm', 'fir_hilb':'hilbert', 'fir_srg':'srg', 'rgb_tr':'rgb', 'splin_pf':'spline','ycbcr_tr':'ycbcr', 'fir_SHI':'lin. phase', 'fir_SAM':'sam', 'iir_sos16':'iir', 'mat_inv':'cholesky', 'r2_FFT':'r-2 FFT'}
     schedulers = ['UniformILPNew', 'UniformILP', 'SCC', 'NonUniformILP']
-    scheduler_table_names = {'SCC' : 'heuristic uniform [1]', 'UniformILP' : 'exact uniform [1]', 'UniformILPNew' : 'prop. exact uniform', 'NonUniformILP' : 'exact non-uniform [1]'}
+    scheduler_table_names = {'SCC' : 'heuristic uniform', 'UniformILP' : 'exact uniform', 'UniformILPNew' : 'prop. exact uniform', 'NonUniformILP' : 'exact non-uniform'}
 
     # base path where result files are located
     basepath = '../../rat_II_schedules/'
@@ -103,18 +101,18 @@ if __name__=='__main__':
         total_num_problems += num_allocs[model]
 
     # mean values and counters
-    ii_qual_avg = {'asdf': 42.0}
-    ii_mins_total = {'asdf': 42}
-    latencies_avg = {'asdf': 42.0}
-    timeouts_total = {'asdf': 42}
-    num_solutions_total = {'asdf': 42}
-    num_solutions_total_1_min = {'asdf': 42}
-    optimal_solutions_total_1_min = {'asdf': 42}
-    num_solutions_avg = {'asdf': 42.0}
-    optimal_total = {'asdf': 42.0}
-    optimal_avg = {'asdf': 42.0}
-    times_total = {'asdf': 42.0}
-    times_avg = {'asdf': 42.0}
+    ii_qual_avg = {}
+    ii_mins_total = {}
+    latencies_avg = {}
+    timeouts_total = {}
+    num_solutions_total = {}
+    num_solutions_total_1_min = {}
+    optimal_solutions_total_1_min = {}
+    num_solutions_avg = {}
+    optimal_total = {}
+    optimal_avg = {}
+    times_total = {}
+    times_avg = {}
 
     for scheduler in schedulers:
         ii_qual_avg[scheduler] = 0.0
@@ -218,10 +216,9 @@ if __name__=='__main__':
                             if v=='OPTIMAL':
                                 optimal_buffer = True
                             elif v=='TIMEOUT_INFEASIBLE' or v=='TIMEOUT_FEASIBLE' or v=='UNKNOWN':
-                                # do nothing
                                 optimal_buffer = False
                             elif v=='INFEASIBLE_OR_UNBOUND' or v=='INFEASIBLE':
-                                print('infeasible problem detected for {}, {}'.format(model,scheduler))
+                                # could insert a print statement here...
                                 optimal_buffer = False
                             else:
                                 print('unexpected status for {}, {}: {}'.format(model,scheduler,v))
