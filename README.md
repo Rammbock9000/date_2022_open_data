@@ -20,7 +20,7 @@
 data files: 
 - schedules for all schedulers as csv files
 - a .vhd file for each synthesis
-- vivado report files for all synthesized .vhd files (that synthesized successfully)
+- vivado report files for all synthesized .vhd files
 
 scripts:
 - analyze report files => generate summary csv files
