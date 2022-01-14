@@ -45,8 +45,6 @@ def calc_energy_per_sample(csv_file_prefix, scheduler):
             try:
                 elements = split_line(line, ';')
                 f_max = float(elements[7])
-                #if f_max < 250.0:
-                  #print(f'oops - f = {f_max} for {csv_file_prefix}')
                 f_max = min(f_max, 250.0)  # target frequency 250 MHz
                 power_total = float(elements[8])
                 II = float(elements[11])
@@ -103,10 +101,6 @@ def filter_non_optimal(csv_file_prefix, scheduler, all_IIs):
             try:
                 elements = split_line(line, ';')
                 II = float(elements[11])
-                #if scheduler == 'ED97':
-                #    RU = float(elements[13])
-                #else:
-                #    RU = float(elements[15])
                 RU = float(elements[15])
                 # check if this implementation is pareto optimal
                 paretoOpt = True
@@ -118,10 +112,6 @@ def filter_non_optimal(csv_file_prefix, scheduler, all_IIs):
                         continue
                     elements2 = split_line(line2, ';')
                     II2 = float(elements2[11])
-                    #if scheduler == 'ED97':
-                    #    RU2 = float(elements2[13])
-                    #else:
-                    #    RU2 = float(elements2[15])
                     RU2 = float(elements2[15])
                     # check pareto optimality
                     if all_IIs and RU > RU2 and II == II2:
@@ -158,10 +148,6 @@ def filter_non_optimal_ru(csv_file_prefix, scheduler, max_M, max_S, max_quot, al
                 n_tot += 1
                 elements = split_line(line, ';')
                 II = float(elements[11])
-                #if scheduler == 'ED97':
-                #    RU = float(elements[13])
-                #else:
-                #    RU = float(elements[15])
                 RU = float(elements[15])
                 # check if we need to skip because of M/S bounds
                 if scheduler != 'ED97':
@@ -188,17 +174,11 @@ def filter_non_optimal_ru(csv_file_prefix, scheduler, max_M, max_S, max_quot, al
                         continue
                     elements2 = split_line(line2, ';')
                     II2 = float(elements2[11])
-                    #if scheduler == 'ED97':
-                    #    RU2 = float(elements2[13])
-                    #else:
-                    #    RU2 = float(elements2[15])
                     RU2 = float(elements[15])
                     # check if we need to skip because of M/S bounds
                     if scheduler != 'ED97':
-                        print("5")
                         S = float(elements[12])
                         M = float(elements[13])
-                        print("6")
                         intII = ceil(M/S)
                         if S > max_S:
                             continue
@@ -235,7 +215,6 @@ def gen_plots():
         calc_energy_per_sample(csv_file, scheduler)
         filter_non_optimal(csv_file, scheduler,all_IIs)
         filter_non_optimal_ru(csv_file, scheduler, max_M, max_S, max_quot,all_IIs)
-    
 
 def do_it(max_M, max_S, max_quot):
     schedulers = ['ED97', 'NonUniformILP', 'UniformILPNew']
