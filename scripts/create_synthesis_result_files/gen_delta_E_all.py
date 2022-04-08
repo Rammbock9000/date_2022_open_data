@@ -1,6 +1,7 @@
 from create_throughput_csv import main as gen_tp_csv
 from split_csv_file import main as split_csv
 from create_eps_files import do_it as gen_eps_files
+from create_eps_files import gen_plots
 from gen_EPS_savings import do_it as gen_delta_E_csv_file
 
 def main():
@@ -58,6 +59,12 @@ def main():
             continue
         with open(result_file_name, 'a') as f:
             f.write(f"{max_M};{max_S};{max_quot};{avg};{m};{num_allocs[max_quot]}\n")
+    
+    # plots for "gen" benchmark (Fig. 3-5)
+    # this overwrites csv files for "fir_gen" for the energy plots
+    # comment out this line if you are iterested in the raw csv files 
+    # of the other experiments
+    gen_plots()
 
 if __name__ == '__main__':
   main()
