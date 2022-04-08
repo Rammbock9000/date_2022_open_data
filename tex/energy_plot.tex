@@ -33,8 +33,8 @@
       table [x expr = \coordindex, y=#2, y error minus=#3, y error plus=#4, col sep=semicolon] {../synth_results/energy_plot/eps_savings_inf.csv};
     \addlegendentryexpanded{#5};
   }
-  \mkplot{c0}{uniformAvg}{uniformMinus}{uniformPlus}{prop. exact uniform}
-  \mkplot{c2}{nonuniformAvg}{nonuniformMinus}{nonuniformPlus}{exact non-uniform}
+  \mkplot{c0}{uniformAvg}{uniformMinus}{uniformPlus}{modified exact uniform [6]}
+  \mkplot{c2}{nonuniformAvg}{nonuniformMinus}{nonuniformPlus}{exact non-uniform [6]}
   % vertical line to separate plots
  \draw [dashed] (10.5,60) -- (10.5,-60);
  % \draw [dashed] (105,0) -- (105,1000);
@@ -102,8 +102,8 @@ The \testname{r-2 FFT} benchmark instance belongs to the right y-axis; all other
       table [x expr = \coordindex, y=#2, y error minus=#3, y error plus=#4, col sep=semicolon] {../synth_results/energy_plot/eps_savings_5-0.csv};
     \addlegendentryexpanded{#5};
   }
-  \mkplot{c0}{uniformAvg}{uniformMinus}{uniformPlus}{prop. exact uniform}
-  \mkplot{c2}{nonuniformAvg}{nonuniformMinus}{nonuniformPlus}{exact non-uniform}
+  \mkplot{c0}{uniformAvg}{uniformMinus}{uniformPlus}{modified exact uniform [6]}
+  \mkplot{c2}{nonuniformAvg}{nonuniformMinus}{nonuniformPlus}{exact non-uniform [6]}
 \end{axis}
 \end{tikzpicture}
 \caption{Average energy per sample savings $\Delta E_s$ for Pareto-optimal systems with $C \leq 5$. This leads to a reduction of the design space by $95.83 \: \%$ and improved results for \testname{spline} and \testname{lin. phase} benchmark instances.}

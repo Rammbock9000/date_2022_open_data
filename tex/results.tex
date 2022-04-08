@@ -7,6 +7,8 @@
 \usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{pgf}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{etoolbox}
@@ -30,6 +32,9 @@
 
 % commands
 \newcommand{\testname}[1]{\textsf{#1}}
+\newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}
+\newcommand{\ratII}{\mathrm{II}_{\mathbb{Q}}}
+\newcommand{\intII}{\mathrm{II}_{\mathbb{N}}}
 
 % colors
 \definecolor{c0}{HTML}{ffffcc}
@@ -44,11 +49,7 @@ red,densely dashed,every mark/.append style={solid,fill=red},mark=square*\\%
 black,densely dashed,every mark/.append style={solid,fill=gray},mark=diamond*\\%
 }
 
-% scheduling table
-\input{scheduling_summary_table}
-\newpage
-
-% design space exploration for gen benchmark
+% design space exploration for the gen benchmark
 \input{gen_plots}
 \newpage
 

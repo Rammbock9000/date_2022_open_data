@@ -1,3 +1,21 @@
+In Fig. \ref{fig:compare_delta_E} we show how the design space exploration can be sped up by skipping some resource allocations solely based on the resulting minimum II.
+We define
+
+\begin{equation}
+    \label{eq:tradeoff_alloc}
+    C = \frac{M}{speedup} = \frac{M \cdot \ratII}{\intII} = \frac{M^2}{S \cdot \ceil{\frac{M}{S}}} 
+\end{equation}
+
+with
+
+\begin{equation}
+    \label{eq:speedup}
+    speedup = \frac{\intII}{\ratII}
+\end{equation}
+
+as a cost metric to decide whether to start the HLS flow or skip the allocation altogether. Large values for $M$ produce high interconnect costs due to large MUXs in the data path. 
+Therefore, we choose to skip those allocations if the speedup due to choosing a rational II does not justify the MUX cost increase.
+
 \begin{figure}[htbp]
     \centering
 \begin{tikzpicture}
@@ -73,6 +91,8 @@
 \end{axis}
 
 \end{tikzpicture}
-    \caption{Comparing the average and maximum energy savings for various upper bounds of $C$}
+    \caption{Comparing the average and maximum energy savings for various upper bounds of $C$. All allocations with $C > \mathrm{max. }\; C$ are skipped.}
     \label{fig:compare_delta_E}
 \end{figure}
+
+We see that increasing $C$ beyond 5 is pointless, since the maximum energy savings do not increase anymore but the average energy savings decrease and the number of considered allocations increases. 

@@ -20,13 +20,15 @@
 data files: 
 - schedules for all schedulers as csv files
 - a .vhd file for each synthesis
-- vivado report files for all synthesized .vhd files (that synthesized successfully)
+- vivado report files for all successfully synthesized .vhd files
 
 scripts:
 - analyze report files => generate summary csv files
 - create scheduling results table from csv files => generate .tex table
 - .tex file to create energy figure from csv files
 
+results:
+- a PDF with extended experimental results and short descriptions
 
 =====================
 
@@ -34,11 +36,11 @@ scripts:
 
 =====================
 
-1) optional: you can re-generate synthesis results using the provided .vhd files
-2) make bash scripts executable if necessary
-3) navigate into "scripts/generate_directories" and execute "generate_directories.sh". This sets up the folder structure for the following scripts
-4) navigate into "scripts/create_scheduling_summary_table" and execute "create_scheduling_summary_table.py" to generate Table II from the paper
-5) navigate into "scripts/create_synthesis_result_files"
-6) execute (in order): "analyze_synthesis_results.sh", "create_throughput_csv.py", "split_csv_file.py" and "gen_delta_E_all.py" to generate data for Figures 3-8 from the paper
-7) navigate into "tex" and build "main.tex" to generate a PDF file with all relevant tables and figures
-8) we created Table III without any scripts but you can extract all data from the synthesis results stored in the .csv files in directory "synth_results/energy_plot" (i.e., fir_SHI_XXX_EPS_OPT.csv)
+0) Optional: Ignore all following steps and just examine the result file "tex/results.pdf" if you are only interested in the extended experimental results.
+	-> Follow steps 1-6 if you wish to re-generate all results yourself.
+1) Optional: You can re-generate synthesis results using the provided .vhd files.
+2) Make bash scripts executable if necessary.
+3) Navigate into "scripts/generate_directories" and execute "generate_directories.sh". This sets up the folder structure for the following scripts.
+4) Navigate into "scripts/create_synthesis_result_files".
+5) Execute (in order): "analyze_synthesis_results.sh", "create_throughput_csv.py", "split_csv_file.py" and "gen_delta_E_all.py".
+6) Navigate into "tex" and build "results.tex" to generate a PDF file with all relevant tables and figures.
